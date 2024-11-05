@@ -1,3 +1,5 @@
+import { getCountryCode } from "./countries";
+
 interface GloveStats {
   STYLE: number;
   COMFORT: number;
@@ -7,12 +9,23 @@ interface GloveStats {
   V4M: number;
 }
 
+interface Country {
+  designed: string;
+  madeIn: string;
+}
+
+interface CountryCode {
+  designed: string;
+  madeIn: string;
+}
+
 interface Glove {
   brand: string;
-  glove_title: string;
-  glove_img: string;
-  made_in: string[];
-  Star: number;
+  title: string;
+  img: string;
+  country: Country;
+  countryCode: CountryCode;
+  stars: number;
   global_note: number;
   stats: GloveStats;
 }
@@ -20,20 +33,28 @@ interface Glove {
 export const glovesData: Glove[] = [
   {
     brand: "HIT N MOVE",
-    glove_title: "All Day Balance",
-    glove_img: "img.jpg",
-    made_in: ["paskistan.png", "usa.png"],
-    Star: 4,
+    title: "All Day Balance",
+    img: "/images/hitnmove-suvari.webp",
+    country: { designed: "United States", madeIn: "Pakistan" },
+    countryCode: {
+      designed: getCountryCode("United States")!,
+      madeIn: getCountryCode("Pakistan")!,
+    },
+    stars: 4,
     global_note: 97,
     stats: { STYLE: 94, COMFORT: 97, DURABILITY: 98, SPARRING: 97, BAG: 98, V4M: 98 },
   },
   {
     brand: "ADIDAS",
-    glove_title: "ADISPEED TILT 350",
-    glove_img: "img.jpg",
-    made_in: ["Uk.png", "usa.png"],
-    Star: 5,
+    title: "ADISPEED TILT 350",
+    img: "img.jpg",
+    country: { designed: "United Kingdom", madeIn: "United States" },
+    countryCode: {
+      designed: getCountryCode("United Kingdom")!,
+      madeIn: getCountryCode("United States")!,
+    },
+    stars: 5,
     global_note: 98,
-    stats: { STYLE: 9, COMFORT: 97, DURABILITY: 98, SPARRING: 97, BAG: 98, V4M: 98 },
+    stats: { STYLE: 96, COMFORT: 97, DURABILITY: 98, SPARRING: 97, BAG: 98, V4M: 98 },
   },
 ];
