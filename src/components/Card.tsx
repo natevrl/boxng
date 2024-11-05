@@ -32,7 +32,7 @@ function StarsRating() {
 
 function Card() {
   return (
-    <div className='h-[380px] w-[270px] bg-blue-400'>
+    <div className='card-border h-[380px] w-[270px] bg-background'>
       {/* top bloc */}
       <div>
         <StarsRating />
@@ -46,7 +46,7 @@ function Card() {
           <Button>x</Button>
         </div>
         {/* glove img */}
-        <div className='relative w-[150px] h-[170px] border-green-400 border-2'>
+        <div className='relative w-[150px] h-[170px] border-primary border-2 shadow-sm'>
           <Image
             src={glovesData[0].img}
             alt={glovesData[0].title}
