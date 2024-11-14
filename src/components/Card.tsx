@@ -3,7 +3,6 @@ import Image from "next/image";
 import ReactCountryFlag from "react-country-flag";
 import { MdOutlineStarBorder } from "react-icons/md";
 import { MdOutlineStar } from "react-icons/md";
-
 import React from "react";
 import { Button } from "./ui/button";
 
@@ -32,7 +31,7 @@ function StarsRating() {
 
 function Card() {
   return (
-    <div className='card-border h-[380px] w-[270px] bg-background'>
+    <div className='card-custom-border h-[380px] w-[270px] bg-background'>
       {/* top bloc */}
       <div>
         <StarsRating />
@@ -44,6 +43,7 @@ function Card() {
         <div className="flex flex-col gap-2">
           <Button>t</Button>
           <Button>x</Button>
+          <Button variant='secondary'>Login</Button>
         </div>
         {/* glove img */}
         <div className='relative w-[150px] h-[170px] border-primary border-2 shadow-sm'>
@@ -51,8 +51,8 @@ function Card() {
             src={glovesData[0].img}
             alt={glovesData[0].title}
             fill
-            objectFit='cover'
-            objectPosition='center'
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover object-center"
           />
         </div>
         <div className=" flex flex-col gap-2">

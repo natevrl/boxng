@@ -60,13 +60,13 @@
 }
 
 @layer components {
-  .card-border {
+  .card-custom-border {
     position: relative;
     border-radius: 19px;
     border: medium solid hsl(var(--primary));
   }
 
-  .card-border::before {
+  .card-custom-border::before {
     content: "";
     position: absolute;
     top: -10px;
@@ -77,7 +77,7 @@
     border-radius: 23px;
   }
 
-  .card-border::after {
+  .card-custom-border::after {
     content: "";
     position: absolute;
     top: -16px;
