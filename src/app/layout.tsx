@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { ADLaM_Display } from "next/font/google";
 import "../globals.css";
 
-const geistSans = localFont({
-	src: "../../public/fonts/GeistVF.woff",
-	variable: "--font-geist-sans",
-	weight: "100 900",
-});
-const geistMono = localFont({
-	src: "../../public/fonts/GeistMonoVF.woff",
-	variable: "--font-geist-mono",
-	weight: "100 900",
-});
+const adlamDisplay = ADLaM_Display({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-adlam-display",
+})
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -26,7 +21,7 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground h-full`}>
+				className={`${adlamDisplay.variable} antialiased`}>
 				{children}
 			</body>
 		</html>

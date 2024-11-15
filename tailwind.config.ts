@@ -8,6 +8,9 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      primary: "var(--font-adlam-display)",
+    },
     extend: {
       colors: {
         background: "hsl(var(--background))",

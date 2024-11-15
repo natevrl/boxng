@@ -1,10 +1,10 @@
 import { getCountryCode } from "./countries";
 
 interface GloveStats {
-  STYLE: number;
-  COMFORT: number;
-  DURABILITY: number;
-  SPARRING: number;
+  STYL: number;
+  COMF: number;
+  DURA: number;
+  SPAR: number;
   BAG: number;
   V4M: number;
 }
@@ -41,20 +41,7 @@ export const glovesData: Glove[] = [
       madeIn: getCountryCode("Pakistan")!,
     },
     stars: 4,
-    global_note: 97,
-    stats: { STYLE: 94, COMFORT: 97, DURABILITY: 98, SPARRING: 97, BAG: 98, V4M: 98 },
-  },
-  {
-    brand: "ADIDAS",
-    title: "ADISPEED TILT 350",
-    img: "img.jpg",
-    country: { designed: "United Kingdom", madeIn: "United States" },
-    countryCode: {
-      designed: getCountryCode("United Kingdom")!,
-      madeIn: getCountryCode("United States")!,
-    },
-    stars: 5,
-    global_note: 98,
-    stats: { STYLE: 96, COMFORT: 97, DURABILITY: 98, SPARRING: 97, BAG: 98, V4M: 98 },
+    global_note: 97.1,
+    stats: { STYL: 94, COMF: 97, DURA: 98, SPAR: 97, BAG: 98, V4M: 98 },
   },
 ];

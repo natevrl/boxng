@@ -13,25 +13,29 @@
     height: 100vh;
   }
 
+  body {
+    @apply bg-background text-primary font-primary text-[16px] leading-relaxed tracking-wide;
+  }
+
   :root {
     --background: 45.37 61.19% 86.86%;
-    --foreground: 188.57 77.78% 7.06%;
+    --foreground: 188.57 78.82% 10.32%;
     --muted: 38.44 34.04% 63.14%;
     --muted-foreground: 0 37.93% 39.8%;
     --popover: 38.44 34.04% 63.14%;
-    --popover-foreground: 188.57 77.78% 7.06%;
+    --popover-foreground: 188.78 77.36% 10.39%;
     --card: 45.37 61.19% 86.86%;
     --card-foreground: 180 83.51% 19.02%;
-    --border: 188.57 77.78% 7.06%;
+    --border: 188.78 77.36% 10.39%;
     --input: 38.44 34.04% 63.14%;
-    --primary: 188.57 77.78% 7.06%;
+    --primary: 188.78 77.36% 10.39%;
     --primary-foreground: 45.37 61.19% 86.86%;
     --secondary: 0 37.93% 39.8%;
     --secondary-foreground: 45.37 61.19% 86.86%;
     --accent: 180 83.51% 19.02%;
     --accent-foreground: 45.37 61.19% 86.86%;
     --destructive: 10 87% 44%;
-    --destructive-foreground: 45.37 61.19% 86.86%;
+    --destructive-foreground: 0 37.93% 39.8%;
     --ring: 0 37.93% 39.8%;
     --radius: 0.5rem;
   }
@@ -61,30 +65,65 @@
 
 @layer components {
   .card-custom-border {
-    position: relative;
     border-radius: 19px;
-    border: medium solid hsl(var(--primary));
+    border-left: 1px solid hsl(var(--primary));
+    border-right:1px solid hsl(var(--primary));
   }
 
   .card-custom-border::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    bottom: -6px;
+    left: -6px;
+    right: -6px;
+    border: 1.5px solid hsl(var(--secondary));
+    border-radius: 23px;
+    pointer-events: none;
+  }
+
+  .card-custom-border::after {
     content: "";
     position: absolute;
     top: -10px;
     bottom: -10px;
     left: -10px;
     right: -10px;
-    border: medium solid hsl(var(--secondary));
-    border-radius: 23px;
-  }
-
-  .card-custom-border::after {
-    content: "";
-    position: absolute;
-    top: -16px;
-    bottom: -16px;
-    left: -16px;
-    right: -16px;
     border-radius: 26px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.41);
+    pointer-events: none;
+  }
+
+  .img-shadow {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  /* rotation animation of the card's background svg */
+  @keyframes appearing {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100;
+    }
+  }
+
+  .rotate-animation {
+    animation: appearing 0.2s;
+  }
+
+  .global-note-shadow {
+    border: 0.5px solid #8c3f3f;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+  }
+}
+
+@layer utilities {
+  .center-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
