@@ -6,42 +6,33 @@ import ReactCountryFlag from "react-country-flag";
 import { MdOutlineStarBorder, MdOutlineStar } from "react-icons/md";
 import { IoLogoYoutube, IoLogoEuro } from "react-icons/io";
 import { useState } from "react";
-import { keyframes } from "@emotion/react";
 
-function StarsRating() {
-  function printStars(star: number): JSX.Element[] {
-    let i = -1;
+function StarsRating(): JSX.Element {
+  function getStarsWithIcons(star: number): JSX.Element[] {
     let stars = [];
-    while (++i < 5) {
-      if (i < star)
-        stars.push(
-          <li key={i} className="hover:scale-110">
-            <MdOutlineStar size={28} />
-          </li>
-        );
-      else
-        stars.push(
-          <li key={i}>
-            <MdOutlineStarBorder size={28} />
-          </li>
-        );
-    }
+    for (let i = 0; i < 5; i++)
+      stars.push(i < star ? <MdOutlineStar size={28} /> : <MdOutlineStarBorder size={28} />);
     return stars;
   }
-  return <ul className='flex'>{printStars(glovesData[0].stars)}</ul>;
+
+  return (
+    <ul className='flex'>
+      {getStarsWithIcons(glovesData[0].stars).map((star, i) => (
+        <li key={i} className='hover:scale-110'>
+          {star}
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 function Stats(): JSX.Element {
-  const stats = glovesData[0].stats;
-  const keys = Object.entries(stats);
+  const keys = Object.entries(glovesData[0].stats);
   return (
     <div className='flex justify-around items-center text-sm leading-4 border-t-[1px] border-t-primary pt-2 mx-4'>
       <div>
         {keys.slice(0, 3).map((key, i) => (
-          <p
-            key={i}
-            title={key[0]}
-            className='font-bold truncate text-clip max-w-[9ch] leading-snug'>
+          <p key={i} className='font-bold truncate text-clip max-w-[9ch] leading-snug'>
             <span className='text-secondary mr-1'>{key[1]}</span> {key[0]}
           </p>
         ))}
@@ -60,17 +51,8 @@ function Stats(): JSX.Element {
 function Card() {
   const [backgroundSvgHandler, setBackgroundSvgHandler] = useState(false);
 
-  const rotate = keyframes`
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  `;
   return (
-    <div
-      className='relative h-[380px] w-[280px] flex flex-col justify-between pt-2 card-custom-border hover:scale-105'>
+    <div className='relative h-[380px] w-[280px] flex flex-col justify-between pt-2 card-custom-border hover:scale-105'>
       {/* SVG background image */}
       {backgroundSvgHandler && (
         <Image
@@ -82,9 +64,6 @@ function Card() {
           className={`object-cover object-center absolute -z-10 ${
             backgroundSvgHandler ? "rotate-animation" : ""
           }`}
-          style={{
-            animation: `${rotate} 2s linear infinite`,
-          }}
         />
       )}
       {/* top bloc */}
@@ -99,20 +78,10 @@ function Card() {
       <div className='flex items-center justify-evenly z-10'>
         <div className='flex flex-col gap-1 max-w-10'>
           <Button variant='secondary' className='rounded-t-full py-5'>
-            <IoLogoYoutube
-              style={{
-                width: "20px",
-                height: "20px",
-              }}
-            />
+            <IoLogoYoutube className='icon-size' />
           </Button>
           <Button className='rounded-b-full bg-accent hover:bg-accent/80'>
-            <IoLogoEuro
-              style={{
-                width: "20px",
-                height: "20px",
-              }}
-            />
+            <IoLogoEuro className='icon-size' />
           </Button>
         </div>
         {/* glove img */}
@@ -134,20 +103,14 @@ function Card() {
             svg
             title={glovesData[0].country.designed}
             countryCode={glovesData[0].countryCode.designed}
-            style={{
-              width: "2em",
-              height: "2em",
-            }}
+            className='flag-size'
           />
           {/* flag #2 */}
           <ReactCountryFlag
             svg
             title={glovesData[0].country.madeIn}
             countryCode={glovesData[0].countryCode.madeIn}
-            style={{
-              width: "2em",
-              height: "2em",
-            }}
+            className='flag-size'
           />
         </div>
       </div>
@@ -161,7 +124,7 @@ function Card() {
           </p>
         </div>
       </div>
-      <div className="absolute left-2/4 bottom-[75px] translate-x-2/4	translate-y-2/4  h-12 w-[1px] bg-primary z-50	"></div>
+      <div className='absolute left-2/4 bottom-[75px] translate-x-2/4	translate-y-2/4  h-12 w-[1px] bg-primary z-50	'></div>
     </div>
   );
 }

@@ -126,4 +126,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .flag-size {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  .icon-size {
+    width: 1.125rem !important;
+    height: 1.125rem !important;
+  }
 }
