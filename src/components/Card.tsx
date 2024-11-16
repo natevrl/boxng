@@ -18,7 +18,7 @@ function StarsRating(): JSX.Element {
   return (
     <ul className='flex'>
       {getStarsWithIcons(glovesData[0].stars).map((star, i) => (
-        <li key={i} className='hover:scale-110'>
+        <li key={i} className='text-secondary hover:scale-110'>
           {star}
         </li>
       ))}
@@ -29,7 +29,7 @@ function StarsRating(): JSX.Element {
 function Stats(): JSX.Element {
   const keys = Object.entries(glovesData[0].stats);
   return (
-    <div className='flex justify-around items-center text-sm leading-4 border-t-[1px] border-t-primary pt-2 mx-4'>
+    <div className='flex justify-around items-center text-sm leading-4 border-t-[1.5px] border-t-primary pt-2 mx-4'>
       <div>
         {keys.slice(0, 3).map((key, i) => (
           <p key={i} className='font-bold truncate text-clip max-w-[9ch] leading-snug'>
@@ -52,7 +52,7 @@ function Card() {
   const [backgroundSvgHandler, setBackgroundSvgHandler] = useState(false);
 
   return (
-    <div className='relative h-[380px] w-[280px] flex flex-col justify-between pt-2 card-custom-border hover:scale-105'>
+    <div className='relative bg-background card-custom-border grain h-[390px] w-[290px] flex flex-col justify-between p-4 overflow-hidden hover:scale-105'>
       {/* SVG background image */}
       {backgroundSvgHandler && (
         <Image
@@ -71,7 +71,9 @@ function Card() {
         <StarsRating />
         <div>
           <h3 className='text-center font-bold text-sm uppercase'>{glovesData[0].brand}</h3>
-          <h4 className='text-center font-bold text-secondary uppercase'>{glovesData[0].title}</h4>
+          <h4 className='text-center font-bold text-secondary uppercase leading-none'>
+            {glovesData[0].title}
+          </h4>
         </div>
       </div>
       {/* mid bloc */}
@@ -118,13 +120,14 @@ function Card() {
       {/* bot bloc */}
       <div>
         <Stats />
-        <div className='flex justify-center'>
-          <p className='global-note-shadow  font-bold text-secondary text-2xl px-2'>
+        <div className='flex justify-center mt-2'>
+          <p className='font-bold text-background text-xl bg-secondary rounded-full px-2'>
             {glovesData[0].global_note}
           </p>
         </div>
+        {/* vertical line */}
+        <div className='absolute left-2/4 bottom-[94px] translate-x-2/4	translate-y-2/4  h-12 w-[1.5px] bg-primary z-50'></div>
       </div>
-      <div className='absolute left-2/4 bottom-[75px] translate-x-2/4	translate-y-2/4  h-12 w-[1px] bg-primary z-50	'></div>
     </div>
   );
 }

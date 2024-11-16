@@ -14,7 +14,10 @@
   }
 
   body {
-    @apply bg-background text-primary font-primary text-[16px] leading-relaxed tracking-wide;
+    @apply bg-accent text-primary font-primary text-[16px] leading-relaxed tracking-wide;
+    /* background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png"); */
+    background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
+    background-blend-mode: multiply;
   }
 
   :root {
@@ -65,18 +68,19 @@
 
 @layer components {
   .card-custom-border {
-    border-radius: 19px;
-    border-left: 1px solid hsl(var(--primary));
-    border-right:1px solid hsl(var(--primary));
+    border-radius: 26px;
+    box-shadow: 3px 12px 10px 1px rgba(0, 0, 0, 0.8);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.781);
   }
 
   .card-custom-border::before {
     content: "";
     position: absolute;
-    top: -6px;
-    bottom: -6px;
-    left: -6px;
-    right: -6px;
+    top: 6px;
+    bottom: 6px;
+    left: 6px;
+    right: 6px;
     border: 1.5px solid hsl(var(--secondary));
     border-radius: 23px;
     pointer-events: none;
@@ -85,13 +89,15 @@
   .card-custom-border::after {
     content: "";
     position: absolute;
-    top: -10px;
-    bottom: -10px;
-    left: -10px;
-    right: -10px;
-    border-radius: 26px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.41);
+    top: 12px;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    border-radius: 19px;
+    border-left: 1.5px solid hsl(var(--primary));
+    border-right: 1.5px solid hsl(var(--primary));
     pointer-events: none;
+    
   }
 
   .img-shadow {
@@ -116,6 +122,11 @@
     border: 0.5px solid #8c3f3f;
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5);
     border-radius: 25px;
+  }
+  .grain {
+    background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+    /* background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png"); */
+    background-blend-mode: multiply;
   }
 }
 
