@@ -1,16 +1,13 @@
 "use client";
 import CardSection from "../components/CardSection";
-import { useState } from "react";
+import Hero from "../components/Hero";
+import NavBar from "../components/NavBar";
 
-export default function Home(): JSX.Element {
+export default function HomePage(): JSX.Element {
   return (
     <>
-      <main className='h-full'>
-        {/* <NavBar /> */}
-        {/*   <Hero /> */}
-        <CardSection />
-        {/*   <Footer /> */}
-      </main>
+      <Hero />
+      <CardSection />
     </>
   );
 }

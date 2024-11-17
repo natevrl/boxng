@@ -52,7 +52,7 @@ function Card() {
   const [backgroundSvgHandler, setBackgroundSvgHandler] = useState(false);
 
   return (
-    <div className='relative bg-background card-custom-border grain h-[390px] w-[290px] flex flex-col justify-between p-4 overflow-hidden hover:scale-105'>
+    <div className='relative card-custom-border noise-bg-primary  h-[390px] w-[290px] flex flex-col justify-between p-4 overflow-hidden hover:scale-105'>
       {/* SVG background image */}
       {backgroundSvgHandler && (
         <Image
