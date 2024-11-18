@@ -3,11 +3,14 @@
 @tailwind utilities;
 
 @layer base {
-  * {
+  *,
+  *::after,
+  *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+
   html,
   body {
     height: 100vh;
@@ -129,6 +132,11 @@
     background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
     background-blend-mode: multiply;
   }
+
+  /* Slick carousel settings & effect */
+  /* .centered-item .slick-center {
+    transform: scale(1.20);
+  } */
 }
 
 @layer utilities {

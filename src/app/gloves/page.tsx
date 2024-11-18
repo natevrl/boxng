@@ -1,9 +1,12 @@
-import React from 'react'
+import CategorySlider from "@/src/components/slider/CategorySlider";
+import React from "react";
 
 function GlovesPage() {
   return (
-    <div>GlovesPage</div>
-  )
+    <>
+      <CategorySlider />
+    </>
+  );
 }
 
-export default GlovesPage
+export default GlovesPage;
