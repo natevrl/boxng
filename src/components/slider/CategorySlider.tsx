@@ -3,11 +3,15 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import CategoryCard from "../CategoryCard";
+import BeltCard from "../BeltCard";
 import "./Sliders.css";
 import {PiCaretLeftBold, PiCaretRightBold} from "react-icons/pi";
 
-function CategorySlider(): JSX.Element {
+interface CategorySliderProps {
+  funcToGetCategory: (category: string) => void;
+}
+
+function CategorySlider({funcToGetCategory}: CategorySliderProps): JSX.Element {
   const GalleryPrevArrow = ({onClick}: { onClick: () => void }) => {
     return (
       <div  className="custom-prevArrow" onClick={onClick}>
@@ -35,13 +39,15 @@ function CategorySlider(): JSX.Element {
     prevArrow: <GalleryPrevArrow onClick={() => {}} />,
   };
 
+
+
   return (
-    <section className="h-full w-full flex flex-col justify-center items-center">
+    <section className="h-full w-full flex flex-col pt-[80px] items-center">
       <h1>Choose Category</h1>
     <div className="slider-contenair w-2/4 min-w-[600px] mx-auto">
       <Slider {...settings}>
         {categoryData.map((item, index) => {
-          return <CategoryCard key={index} title={item.name} p={item.depiction} img={item.img} />;
+          return <BeltCard key={index} title={item.name} p={item.depiction} img={item.img} funcToGetCategory={funcToGetCategory}/>;
         })}
       </Slider>
     </div>
@@ -49,27 +55,6 @@ function CategorySlider(): JSX.Element {
   );
 }
 
-// function CategorySlider() {
-//   const settings = {
-//     dots: true,
-//     className: 'centered-item',
-//     centerMode: true,
-//     focusOnSelect: true,
-//     infinite: true,
-//     centerPadding: '100px',
-//     slidesToShow: 3,
-//     speed: 500,
-//   };
-//   return (
-//     <section className="slider-contenair w-2/4 mx-auto mt-20">
-//       <Slider {...settings}>
-//           {categoryData.map((item, index) => {
-//             return <CategoryCard key={index} title={item.name} p={item.depiction} img={item.img} />;
-//           })}
-//       </Slider>
-//     </section>
-//   );
-// }
 
 interface Category {
   name: string;
@@ -99,7 +84,7 @@ const categoryData: Category[] = [
     img: "bg-blue-400",
   },
   {
-    name: "super heavy",
+    name: "super_heavy",
     depiction: "€500 to €950",
     img: "bg-green-400",
   },
@@ -107,34 +92,6 @@ const categoryData: Category[] = [
     name: "luxury",
     depiction: "€950 and more",
     img: "bg-purple-400",
-  },
-];
-
-const sliderData = [
-  {
-    name: "One",
-    image:
-      "https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
-  },
-  {
-    name: "Two",
-    image:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
-  },
-  {
-    name: "Three",
-    image:
-      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-  },
-  {
-    name: "Four",
-    image:
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-  },
-  {
-    name: "Five",
-    image:
-      "https://images.unsplash.com/photo-1493238792000-8113da705763?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
   },
 ];
 

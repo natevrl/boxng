@@ -1,9 +1,13 @@
 import Card from './Card';
+import {gloves} from '../utils/itemsDb';
 
-function CardSection() {
+function CardSection({ showCategory }: { showCategory: string }) : JSX.Element {
+  const categoryItems = gloves["middle"];
   return (
-    <section className='h-full flex justify-center items-center'>
-      <Card />
+    <section className='flex flex-col justify-center items-center'>
+      {categoryItems.map((item, i) => (
+        <Card key={i} img={item.img} />
+      ))}
     </section>
   )
 }

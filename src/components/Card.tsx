@@ -1,5 +1,5 @@
 "use client";
-import { glovesData } from "@/src/utils/itemsDb";
+import { gloves } from "@/src/utils/itemsDb";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import ReactCountryFlag from "react-country-flag";
@@ -17,7 +17,7 @@ function StarsRating(): JSX.Element {
 
   return (
     <ul className='flex'>
-      {getStarsWithIcons(glovesData[0].stars).map((star, i) => (
+      {getStarsWithIcons(gloves.middle[0].stars).map((star, i) => (
         <li key={i} className='text-secondary hover:scale-110'>
           {star}
         </li>
@@ -27,7 +27,7 @@ function StarsRating(): JSX.Element {
 }
 
 function Stats(): JSX.Element {
-  const keys = Object.entries(glovesData[0].stats);
+  const keys = Object.entries(gloves.middle[0].stats);
   return (
     <div className='flex justify-around items-center text-sm leading-4 border-t-[1.5px] border-t-primary pt-2 mx-4'>
       <div>
@@ -48,7 +48,7 @@ function Stats(): JSX.Element {
   );
 }
 
-function Card() {
+function Card({img} : {img: string}): JSX.Element {
   const [backgroundSvgHandler, setBackgroundSvgHandler] = useState(false);
 
   return (
@@ -70,9 +70,9 @@ function Card() {
       <div className='flex flex-col justify-center items-center gap-2 z-10'>
         <StarsRating />
         <div>
-          <h3 className='text-center font-bold text-sm uppercase'>{glovesData[0].brand}</h3>
+          <h3 className='text-center font-bold text-sm uppercase'>{gloves.middle[0].brand}</h3>
           <h4 className='text-center font-bold text-secondary uppercase leading-none'>
-            {glovesData[0].title}
+            {gloves.middle[0].title}
           </h4>
         </div>
       </div>
@@ -89,8 +89,8 @@ function Card() {
         {/* glove img */}
         <div className='relative w-[150px] h-[160px] border-primary img-shadow'>
           <Image
-            src={glovesData[0].img}
-            alt={glovesData[0].title}
+            src={img}
+            alt={gloves.middle[0].title}
             fill
             priority
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
@@ -103,15 +103,15 @@ function Card() {
           {/* flag #1 */}
           <ReactCountryFlag
             svg
-            title={glovesData[0].country.designed}
-            countryCode={glovesData[0].countryCode.designed}
+            title={gloves.middle[0].country.designed}
+            countryCode={gloves.middle[0].country.designed}
             className='flag-size'
           />
           {/* flag #2 */}
           <ReactCountryFlag
             svg
-            title={glovesData[0].country.madeIn}
-            countryCode={glovesData[0].countryCode.madeIn}
+            title={gloves.middle[0].country.madeIn}
+            countryCode={gloves.middle[0].country.madeIn}
             className='flag-size'
           />
         </div>
@@ -122,7 +122,7 @@ function Card() {
         <Stats />
         <div className='flex justify-center mt-2'>
           <p className='font-bold text-background text-xl bg-secondary rounded-full px-2'>
-            {glovesData[0].global_note}
+            {gloves.middle[0].global_note}
           </p>
         </div>
         {/* vertical line */}
