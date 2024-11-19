@@ -30,18 +30,21 @@ function CategorySlider(): JSX.Element {
     infinite: true,
     centerPadding: "100px",
     slidesToShow: 3,
-    speed: 300,
+    speed: 100,
     nextArrow: <GalleryNextArrow onClick={() => {}} />,
     prevArrow: <GalleryPrevArrow onClick={() => {}} />,
   };
 
   return (
-    <section className="slider-contenair w-2/4 mx-auto mt-20">
+    <section className="h-full w-full flex flex-col justify-center items-center">
+      <h1>Choose Category</h1>
+    <div className="slider-contenair w-2/4 min-w-[600px] mx-auto">
       <Slider {...settings}>
         {categoryData.map((item, index) => {
           return <CategoryCard key={index} title={item.name} p={item.depiction} img={item.img} />;
         })}
       </Slider>
+    </div>
     </section>
   );
 }
