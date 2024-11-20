@@ -54,9 +54,6 @@ const config: Config = {
           "5": "hsl(var(--chart-5))",
         },
       },
-      height: {
-        navbar: "var(--navbar-height)",
-      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -65,9 +62,29 @@ const config: Config = {
       screens: {
         'mobile': {'max': '480px'},
         'tablet': {'max': '768px'},
-        'laptop': {'max': '1024px'},
+        'laptop': {'max': '992px'},
         'desktop': {'max': '1440px'},
         'largeDesktop': {'max': '1920px'},
+        'min-mbl': {'min': '480px'},
+        'min-tbl': {'min': '768px'},
+        'min-lpt': {'min': '992px'},
+        'min-desk': {'min': '1440px'},
+        'min-ldesk': {'min': '1920px'},
+        
+      },
+      width: {
+        mobile: '480px',
+        tablet: '768px',
+        laptop: '992px',
+        desktop: '1440px',
+        largeDesktop: '1920px',
+      },
+      maxWidth: {
+        mobile: '480px',
+        tablet: '768px',
+        laptop: '992px',
+        desktop: '1440px',
+        largeDesktop: '1920px',
       },
     },
   },

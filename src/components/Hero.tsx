@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { Button } from "./ui/button";
 
 function RingImg(): JSX.Element {
   return (
@@ -30,12 +31,29 @@ function MainCharImg(): JSX.Element {
   );
 }
 
-function Hero(): JSX.Element {
+function HeroBackground(): JSX.Element {
   return (
-    <section className='w-full h-screen'>
+    <div className='absolute top-0 left-0 w-full h-screen -z-10 '>
       <RingImg />
       <MainCharImg />
-    </section>
+    </div>
+  );
+}
+
+function Hero(): JSX.Element {
+  return (
+    <>
+      <HeroBackground />
+      <section className='min-h-[calc(100vh-80px)] flex flex-col mt-20'>
+        <div className="flex flex-col gap-6 items-start">
+          <h1 className='h1 uppercase'>
+            boxing <span className='text-secondary'>review app</span>
+          </h1>
+          <p className='text-xl'>biggest boxing gloves reviews's webiste</p>
+          <Button className="h-14 w-40 uppercase">start now</Button>
+        </div>
+      </section>
+    </>
   );
 }
 

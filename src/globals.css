@@ -11,19 +11,28 @@
     box-sizing: border-box;
   }
 
-  html,
   body {
-    height: 100vh;
+    @apply bg-background min-h-screen text-primary font-primary text-[16px] leading-relaxed tracking-wide relative;
   }
 
-  body {
-    @apply noise-bg-primary text-primary font-primary text-[16px] leading-relaxed tracking-wide relative;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+      @apply text-primary font-primary;
+  }
+
+  .h1 {
+      @apply text-[70px] xl:text-[120px] leading-[1.1] font-semibold;
+  }
+
+  .h2 {
+      @apply text-[56px] xl:text-[80px] leading-[1.2] font-bold;
   }
 
   :root {
-    /* navbar height */
-    --navbar-height: 80px;
-
     /* color theme */
     --background: 45.76 59.6% 80.59%;
     --foreground: 188.57 77.78% 7.06%;
@@ -135,12 +144,26 @@
 }
 
 @layer utilities {
+  .contenair {
+    @apply min-lpt:max-w-laptop min-desk:max-w-desktop w-full mx-auto;
+  }
+
   .center-absolute {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .h-screen-nav {
+    height: calc(100vh - 65.6px);
+  }
+  @media (max-width: 768px) {
+    .h-screen-nav {
+        height: calc(100vh - 53.6px);
+    }
+}
+
   .flag-size {
     width: 2rem !important;
     height: 2rem !important;

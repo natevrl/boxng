@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import ReactCountryFlag from "react-country-flag";
 import { MdOutlineStarBorder, MdOutlineStar } from "react-icons/md";
 import { IoLogoYoutube, IoLogoEuro } from "react-icons/io";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 function StarsRating(): JSX.Element {
   function getStarsWithIcons(star: number): JSX.Element[] {
@@ -49,21 +49,26 @@ function Stats(): JSX.Element {
 }
 
 function Card({img} : {img: string}): JSX.Element {
-  const [backgroundSvgHandler, setBackgroundSvgHandler] = useState(false);
+  const [backgroundSvg, setBackgroundSvg] = useState(false);
+
+  const setBackgroundSvgHandler = useCallback((value: boolean) => {
+    setBackgroundSvg(value);
+  }, []);
 
   return (
-    <div className='relative card-custom-border noise-bg-primary  h-[390px] w-[290px] flex flex-col justify-between p-4 overflow-hidden hover:scale-105'>
+    <div className='m-1 relative card-custom-border noise-bg-primary  h-[390px] w-[290px] flex flex-col justify-between p-4 overflow-hidden hover:scale-105'
+    onMouseEnter={() => setBackgroundSvgHandler(true)}
+    onMouseLeave={() => setBackgroundSvgHandler(false)}
+    >
       {/* SVG background image */}
-      {backgroundSvgHandler && (
+      {backgroundSvg && (
         <Image
           src='/images/card-boom-effect.svg'
           alt='card boom effect on hover'
           fill
           priority
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-          className={`object-cover object-center absolute -z-10 ${
-            backgroundSvgHandler ? "rotate-animation" : ""
-          }`}
+          className={`object-cover object-center absolute -z-10`}
         />
       )}
       {/* top bloc */}
@@ -71,7 +76,7 @@ function Card({img} : {img: string}): JSX.Element {
         <StarsRating />
         <div>
           <h3 className='text-center font-bold text-sm uppercase'>{gloves.middle[0].brand}</h3>
-          <h4 className='text-center font-bold text-secondary uppercase leading-none'>
+          <h4 className='text-center font-bold text-secondary uppercase leading-none text-base'>
             {gloves.middle[0].title}
           </h4>
         </div>
@@ -95,8 +100,6 @@ function Card({img} : {img: string}): JSX.Element {
             priority
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             className='object-cover object-center'
-            onMouseEnter={() => setBackgroundSvgHandler(true)}
-            onMouseLeave={() => setBackgroundSvgHandler(false)}
           />
         </div>
         <div className=' flex flex-col gap-2'>
@@ -126,7 +129,7 @@ function Card({img} : {img: string}): JSX.Element {
           </p>
         </div>
         {/* vertical line */}
-        <div className='absolute left-2/4 bottom-[94px] translate-x-2/4	translate-y-2/4  h-12 w-[1.5px] bg-primary z-50'></div>
+        {/* <div className='absolute left-2/4 bottom-[94px] translate-x-2/4	translate-y-2/4  h-12 w-[1px] bg-primary z-50'></div> */}
       </div>
     </div>
   );

@@ -81,7 +81,7 @@ function NavBar(): JSX.Element {
   }, []);
 
   return (
-    <header className='absolute top-0 px-12 w-full h-navbar flex justify-between items-center'>
+    <header className='sticky top-0 z-20 flex w-full items-center justify-between border-b-secondary border-b-2 bg-background px-6 py-3 lg:px-8'>
       <Logo />
       {winWidth < 992 ? <MobileNav /> : <LaptopNav />}
     </header>

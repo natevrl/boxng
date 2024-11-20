@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${adlamDisplay.variable} antialiased`}>
         <NavBar />
-        <main className="h-full w-full">{children}</main>
+        {children}
         {/* <Footer /> */}
       </body>
     </html>
