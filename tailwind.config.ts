@@ -64,12 +64,16 @@ const config: Config = {
         'tablet': {'max': '768px'},
         'laptop': {'max': '992px'},
         'desktop': {'max': '1440px'},
-        'largeDesktop': {'max': '1920px'},
+        'fhd': {'max': '1920px'},
+        'qhd': {'max': '2560px '},
+        '4k': {'max': '3840px '},
         'min-mbl': {'min': '480px'},
         'min-tbl': {'min': '768px'},
         'min-lpt': {'min': '992px'},
         'min-desk': {'min': '1440px'},
-        'min-ldesk': {'min': '1920px'},
+        'min-fhd': {'min': '1920px'},
+        'min-qhd': {'min': '2560px '},
+        'min-4k': {'min': '3840px '},
         
       },
       width: {
