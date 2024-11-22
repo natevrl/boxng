@@ -8,8 +8,16 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    animation: {
+      'bounce': "bounce 2s infinite",
+    },
     fontFamily: {
-      primary: "var(--font-adlam-display)",
+      // primary: "var(--font-adlam-display)",
+      knockoutLight: ['knockout-light', 'sans-serif'],
+      knockoutHeavy: ['knockout-heavy', 'sans-serif'],
+      knockoutHeavyLight: ['knockout-heavy-light', 'sans-serif'],
+      knockoutWelter: ['knockout-welter', 'sans-serif'],
+      primary: ['raleway', 'sans-serif'],
     },
     extend: {
       colors: {

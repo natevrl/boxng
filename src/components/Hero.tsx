@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import {Button} from "./ui/button";
+import { GiBoxingGlove } from "react-icons/gi";
 
 function RingImg(): JSX.Element {
   return (
@@ -48,7 +49,7 @@ function LittleCharImg(): JSX.Element {
 
 function HeroBackground(): JSX.Element {
   return (
-    <div className="absolute inset-0 -z-10 opacity-30">
+    <div className="absolute inset-0 -z-10 opacity-70">
       <RingImg />
       <MainCharImg />
       <LittleCharImg />
@@ -62,11 +63,13 @@ function Hero(): JSX.Element {
       <HeroBackground />
       <section className="min-h-[calc(100vh-80px)] flex flex-col mt-20">
         <div className="flex flex-col gap-6 items-start">
-          <h1 className="h1 uppercase">
-            boxing <span className="text-secondary">review app</span>
+          <h1 className="text-7xl leading-none first-line:uppercase font-knockoutHeavy">
+            born <span className="text-secondary">2 ring</span>
           </h1>
-          <p className="text-xl">biggest boxing gloves reviews's webiste</p>
-          <Button className="h-14 w-40 uppercase">start now</Button>
+          <h2 className="font-primary leading-none text-2xl text-secondary italic tracking-normal">
+            "Discover top-rated boxing equipment"
+          </h2>
+          <button className="text-secondary animate-bounce "><GiBoxingGlove size={48} className="" /></button>
         </div>
       </section>
     </>
