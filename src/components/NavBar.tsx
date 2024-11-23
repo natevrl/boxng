@@ -3,13 +3,12 @@ import Link from "next/link";
 import React, {useEffect, useState} from "react";
 import {Button} from "./ui/button";
 import {IoClose, IoMenu} from "react-icons/io5";
-import Image from "next/image";
 import LogoSvg from "./ui/LogoSvg";
 
 function Logo(): JSX.Element {
   return (
     <Link href="/" className="h-16 w-16">
-      <LogoSvg fill="currentColor" className=" w-full h-full text-primary" />
+      <LogoSvg className=" w-full h-full text-primary" />
     </Link>
   );
 }

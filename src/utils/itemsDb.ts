@@ -1,7 +1,7 @@
-import { V4MAPPED } from "dns";
-import { getCountryCode } from "./countries";
+import {V4MAPPED} from "dns";
+import {getCountryCode} from "./countries";
 
-interface GloveStats {
+export interface IGloveStats {
   STYL: number;
   COMF: number;
   DURA: number;
@@ -10,37 +10,30 @@ interface GloveStats {
   V4M: number;
 }
 
-interface Country {
+export interface ICountry {
   designed: string;
   madeIn: string;
 }
 
-interface CountryCode {
-  designed: string;
-  madeIn: string;
-}
-
-interface Glove {
+export interface IGlove {
   brand: string;
   title: string;
   img: string;
-  country: Country;
+  country: ICountry;
   stars: number;
   videoUrl: string;
   buyUrl: string;
-  global_note: number;
-  stats: GloveStats;
-  category: string;
+  globalNote: number;
+  stats: IGloveStats;
 }
 
-
 interface Gloves {
-  feather: Glove[];
-  welter: Glove[];
-  middle: Glove[];
-  heavy: Glove[];
-  super_heavy: Glove[];
-  luxury: Glove[];
+  feather: IGlove[];
+  welter: IGlove[];
+  middle: IGlove[];
+  heavy: IGlove[];
+  super_heavy: IGlove[];
+  luxury: IGlove[];
   [key: string]: any;
 }
 
@@ -54,95 +47,81 @@ interface Gloves {
   videoUrl: "",
   buyUrl: "",
   stars: 4,
-  global_note: 97,
+  globalNote: 97,
   stats: { STYL: 94, COMF: 97, DURA: 98, SPAR: 97, BAG: 98, V4M: 98 },
-  category: "middle",
 }, 
 */
 
-
-
-
-
-
-export const gloves : Gloves = {
+export const glovesData: Gloves = {
   feather: [],
-  welter: [
-
-  ],
+  welter: [],
   middle: [
     {
       brand: "HIT N MOVE",
       title: "Suvari",
       img: "/images/hitnmove-suvari.webp",
-      country: { designed: "US", madeIn: "PK" },
+      country: {designed: "US", madeIn: "PK"},
       videoUrl: "",
       buyUrl: "",
       stars: 5,
-      global_note: 97.1,
-      stats: { STYL: 94, COMF: 97, DURA: 98, SPAR: 97, BAG: 98, V4M: 98 },
-      category: "middle",
+      globalNote: 97.1,
+      stats: {STYL: 94, COMF: 97, DURA: 98, SPAR: 97, BAG: 98, V4M: 98},
     },
     {
       brand: "HIT N MOVE",
       title: "All Day Balance",
-      img: "/images/gloves/hitnmove-alldaybalance.png",
-      country: { designed: "US", madeIn: "PK" },
+      img: "/images/gloves/middle/hitnmove-alldaybalance.png",
+      country: {designed: "US", madeIn: "PK"},
       videoUrl: "",
       buyUrl: "",
       stars: 5,
-      global_note: 97,
-      stats: { STYL: 94, COMF: 97, DURA: 98, SPAR: 97, BAG: 98, V4M: 98 },
-      category: "middle",
+      globalNote: 97,
+      stats: {STYL: 94, COMF: 97, DURA: 98, SPAR: 97, BAG: 98, V4M: 98},
     },
     {
       brand: "adidas",
       title: "Adispeed",
       img: "/images/gloves/adidas-adispeed.jpg",
-      country: { designed: "DE", madeIn: "PK" },
+      country: {designed: "DE", madeIn: "PK"},
       videoUrl: "",
       buyUrl: "",
       stars: 5,
-      global_note: 96.3,
-      stats: { STYL: 96, COMF: 97, DURA: 95, SPAR: 97, BAG: 95, V4M: 98 },
-      category: "middle",
+      globalNote: 96.3,
+      stats: {STYL: 96, COMF: 97, DURA: 95, SPAR: 97, BAG: 95, V4M: 98},
     },
     {
       brand: "ADIDAS",
       title: "Speed Tilt 350",
       img: "/images/gloves/adidas-speedtilt350.jpg",
-      country: { designed: "DE", madeIn: "PK" },
+      country: {designed: "DE", madeIn: "PK"},
       videoUrl: "",
       buyUrl: "",
       stars: 5,
-      global_note: 96.5,
-      stats: { STYL: 96, COMF: 97, DURA: 95, SPAR: 97, BAG: 96, V4M: 98 },
-      category: "middle",
+      globalNote: 96.5,
+      stats: {STYL: 96, COMF: 97, DURA: 95, SPAR: 97, BAG: 96, V4M: 98},
     },
     {
       brand: "PHENOM",
       title: "SG-210",
       img: "/images/gloves/phenom-SG-210.jpg",
-      country: { designed: "UK", madeIn: "PK" },
+      country: {designed: "UK", madeIn: "PK"},
       videoUrl: "",
       buyUrl: "",
       stars: 5,
-      global_note: 96.1,
-      stats: { STYL: 95, COMF: 96, DURA: 95, SPAR: 97, BAG: 95, V4M: 98 },
-      category: "middle",
+      globalNote: 96.1,
+      stats: {STYL: 95, COMF: 96, DURA: 95, SPAR: 97, BAG: 95, V4M: 98},
     },
     {
       brand: "MESSENGER",
       title: "Pro 3.0 XMT",
       img: "/images/gloves/messenger-pro3xt.png",
-      country: { designed: "PK", madeIn: "PK" },
+      country: {designed: "PK", madeIn: "PK"},
       videoUrl: "",
       buyUrl: "",
       stars: 5,
-      global_note: 96.3,
-      stats: { STYL: 95, COMF: 96, DURA: 97, SPAR: 96, BAG: 95, V4M: 99 },
-      category: "middle",
-    } 
+      globalNote: 96.3,
+      stats: {STYL: 95, COMF: 96, DURA: 97, SPAR: 96, BAG: 95, V4M: 99},
+    },
   ],
   heavy: [],
   super_heavy: [],
@@ -151,14 +130,12 @@ export const gloves : Gloves = {
       brand: "DI NARDO",
       title: "The Eminence Range ",
       img: "/images/",
-      country: { designed: "IT", madeIn: "IT" },
+      country: {designed: "IT", madeIn: "IT"},
       videoUrl: "",
       buyUrl: "",
       stars: 5,
-      global_note: 96.1,
-      stats: { STYL: 97, COMF: 97, DURA: 97, SPAR: 96, BAG: 98, V4M: 92 },
-      category: "luxury",
+      globalNote: 96.1,
+      stats: {STYL: 97, COMF: 97, DURA: 97, SPAR: 96, BAG: 98, V4M: 92},
     },
   ],
-
-}
+};

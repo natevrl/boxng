@@ -12,12 +12,9 @@ const config: Config = {
       'bounce': "bounce 2s infinite",
     },
     fontFamily: {
-      // primary: "var(--font-adlam-display)",
-      knockoutLight: ['knockout-light', 'sans-serif'],
+      primary: "var(--font-inter)",
       knockoutHeavy: ['knockout-heavy', 'sans-serif'],
       knockoutHeavyLight: ['knockout-heavy-light', 'sans-serif'],
-      knockoutWelter: ['knockout-welter', 'sans-serif'],
-      primary: ['raleway', 'sans-serif'],
     },
     extend: {
       colors: {

@@ -1,12 +1,11 @@
-import type { Metadata } from "next";
-import { ADLaM_Display } from "next/font/google";
+import type {Metadata} from "next";
+import {Inter} from "next/font/google";
 import "../globals.css";
 import NavBar from "../components/NavBar";
 
-const adlamDisplay = ADLaM_Display({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-adlam-display",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -20,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={`${adlamDisplay.variable} antialiased`}>
+    <html lang="en">
+      <body className={`${inter.variable} antialiased`}>
         <NavBar />
         {children}
         {/* <Footer /> */}

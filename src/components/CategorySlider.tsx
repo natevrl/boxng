@@ -1,20 +1,20 @@
 "use client";
 import React from "react";
 import BeltCard from "./BeltCard";
-import { ScrollArea, ScrollBar } from "@/src/components/ui/scroll-area";
-import { Separator } from "@/src/components/ui/separator";
+import {ScrollArea, ScrollBar} from "@/src/components/ui/scroll-area";
+import {Separator} from "@/src/components/ui/separator";
 
 interface CategorySliderProps {
   funcToGetCategory: (category: string) => void;
 }
 
-function CategorySlider({ funcToGetCategory }: CategorySliderProps): JSX.Element {
+function CategorySlider({funcToGetCategory}: CategorySliderProps): JSX.Element {
   return (
-    <section className='flex gap-4 items-center'>
-      <div className='h-1/2 w-52 flex flex-col items-center gap-4'>
-        <h1>Choose Category</h1>
-        <ScrollArea type='always' className='w-full rounded-xl whitespace-nowrap'>
-          <div className='flex flex-col gap-6 justify-center items-center bg-popover'>
+    <section className="flex gap-4 items-center">
+      <div className="h-1/2 w-52 flex flex-col items-center gap-4">
+        <h1>Select Category</h1>
+        <ScrollArea type="always" className="w-full rounded-xl whitespace-nowrap">
+          <div className="flex flex-col gap-6 justify-center items-center bg-popover">
             {categoryData.map((item, index) => {
               return (
                 <BeltCard
@@ -27,10 +27,17 @@ function CategorySlider({ funcToGetCategory }: CategorySliderProps): JSX.Element
               );
             })}
           </div>
-          <ScrollBar orientation='vertical' />
         </ScrollArea>
+
+        {/* 
+        Ce boutton va ouvrir une modal avec : 
+            --> Une description claire des categorie (les prix),
+            --> Comment les gants sont notés (img box2fit)
+            --> Une description de chacune des stats 
+        */}
+        <button>Helper</button>
       </div>
-      <Separator className='h-full bg-primary' orientation='vertical' />
+      <Separator className="h-full bg-primary" orientation="vertical" />
     </section>
   );
 }
