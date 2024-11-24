@@ -27,7 +27,7 @@ function HelperDialogButton() {
       <DialogTrigger>
         <IoMdHelpCircle
           size={40}
-          className='text-popover icon-with-border rounded-full bg-background icon-shadow'
+          className='icon-shadow bg-background text-popover rounded-full active:shadow-none active:translate-y-1'
         />
       </DialogTrigger>
       <DialogContent className='sm:max-w-md'>
