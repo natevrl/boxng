@@ -1,15 +1,14 @@
 "use client";
 import Image from "next/image";
-import {Button} from "./ui/button";
+import { Button } from "./ui/button";
 import ReactCountryFlag from "react-country-flag";
-import {MdOutlineStarBorder, MdOutlineStar} from "react-icons/md";
-import {IoLogoYoutube, IoLogoEuro} from "react-icons/io";
-import {useState, useCallback} from "react";
+import { MdOutlineStarBorder, MdOutlineStar } from "react-icons/md";
+import { IoLogoYoutube, IoLogoEuro } from "react-icons/io";
+import { useState, useCallback } from "react";
 
-import {glovesData, IGlove, IGloveStats} from "@/src/utils/itemsDb";
+import { glovesData, IGlove, IGloveStats } from "@/src/constants/glovesDb";
 
-
-function StarsRating({stars}: {stars: number}): JSX.Element {
+function StarsRating({ stars }: { stars: number }): JSX.Element {
   function getStarsWithIcons(star: number): JSX.Element[] {
     let stars = [];
     for (let i = 0; i < 5; i++)
@@ -18,9 +17,9 @@ function StarsRating({stars}: {stars: number}): JSX.Element {
   }
 
   return (
-    <ul className="flex">
+    <ul className='flex'>
       {getStarsWithIcons(stars).map((star, i) => (
-        <li key={i} className="text-secondary hover:scale-110">
+        <li key={i} className='text-secondary hover:scale-110'>
           {star}
         </li>
       ))}
@@ -28,21 +27,21 @@ function StarsRating({stars}: {stars: number}): JSX.Element {
   );
 }
 
-function Stats({s} : {s : IGloveStats}): JSX.Element {
+function Stats({ s }: { s: IGloveStats }): JSX.Element {
   const keys = Object.entries(s);
   return (
-    <div className="font-knockoutHeavyLight flex justify-around items-center text-sm leading-snug tracking-normal border-t-[1.5px] border-t-primary pt-2 mx-4">
+    <div className='font-knockoutHeavyLight flex justify-around items-center text-sm leading-snug tracking-normal border-t-[1.5px] border-t-primary pt-2 mx-4'>
       <div>
         {keys.slice(0, 3).map((key, i) => (
           <p key={i}>
-            <span className="text-secondary mr-1 font-knockoutHeavy">{key[1]}</span> {key[0]}
+            <span className='text-secondary mr-1 font-knockoutHeavy'>{key[1]}</span> {key[0]}
           </p>
         ))}
       </div>
       <div>
         {keys.slice(3).map((key, i) => (
           <p key={i}>
-            <span className="text-secondary mr-1 font-knockoutHeavy">{key[1]}</span> {key[0]}
+            <span className='text-secondary mr-1 font-knockoutHeavy'>{key[1]}</span> {key[0]}
           </p>
         ))}
       </div>
@@ -51,20 +50,10 @@ function Stats({s} : {s : IGloveStats}): JSX.Element {
 }
 
 function Card(props: IGlove): JSX.Element {
-  const {
-    brand,
-    title,
-    img,
-    country,
-    stars,
-    videoUrl,
-    buyUrl,
-    globalNote,
-    stats,
-  } = props;
+  const { brand, title, img, country, stars, videoUrl, buyUrl, globalNote, stats } = props;
 
   const [backgroundSvg, setBackgroundSvg] = useState(false);
-  const checkTitleSize : string = title.length > 19 ? "text-sm" : "text-base font-bold";
+  const checkTitleSize: string = title.length > 19 ? "text-sm" : "text-base font-bold";
 
   const setBackgroundSvgHandler = useCallback((value: boolean) => {
     setBackgroundSvg(value);
@@ -72,68 +61,66 @@ function Card(props: IGlove): JSX.Element {
 
   return (
     <div
-      className="m-1 relative card-custom-border noise-bg-primary  h-[390px] w-[290px] flex flex-col justify-between p-4 overflow-hidden hover:scale-105"
+      className='m-1 relative card-custom-border noise-bg-primary  h-[390px] w-[290px] flex flex-col justify-between p-4 overflow-hidden hover:scale-105 hover:shadow-none'
       onMouseEnter={() => setBackgroundSvgHandler(true)}
-      onMouseLeave={() => setBackgroundSvgHandler(false)}
-    >
+      onMouseLeave={() => setBackgroundSvgHandler(false)}>
       {/* SVG background image */}
       {backgroundSvg && (
         <Image
-          src="/images/card-boom-effect.svg"
-          alt="card boom effect on hover"
+          src='/images/card-boom-effect.svg'
+          alt='card boom effect on hover'
           fill
-          priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
           className={`object-cover object-center absolute -z-10`}
         />
       )}
       {/* top bloc */}
-      <div className="flex flex-col justify-center items-center gap-2 z-10">
+      <div className='flex flex-col justify-center items-center gap-2 z-10'>
         <StarsRating stars={stars} />
         <div>
-          <h4 className="text-center font-knockoutHeavyLight text-sm uppercase tracking-normal">
+          <h4 className='text-center font-knockoutHeavyLight text-sm uppercase tracking-normal'>
             {brand}
           </h4>
-          <h3 className={`${checkTitleSize} text-center font-knockoutHeavy text-secondary uppercase leading-none`}>
+          <h3
+            className={`${checkTitleSize} text-center font-knockoutHeavy text-secondary uppercase leading-none`}>
             {title}
           </h3>
         </div>
       </div>
       {/* mid bloc */}
-      <div className="flex items-center justify-evenly z-10">
-        <div className="flex flex-col gap-1 max-w-10">
-          <Button variant="secondary" className="rounded-t-full py-5">
-            <IoLogoYoutube className="icon-size" />
+      <div className='flex items-center justify-evenly z-10'>
+        <div className='flex flex-col gap-1 max-w-10'>
+          <Button variant='secondary' className='rounded-t-full py-5'>
+            <IoLogoYoutube className='icon-size' />
           </Button>
-          <Button className="rounded-b-full bg-accent hover:bg-accent/80">
-            <IoLogoEuro className="icon-size" />
+          <Button className='rounded-b-full bg-accent hover:bg-accent/80'>
+            <IoLogoEuro className='icon-size' />
           </Button>
         </div>
         {/* glove img */}
-        <div className="relative w-[150px] h-[160px] border-primary img-shadow">
+        <div className='relative w-[150px] h-[160px] border-primary card-shadow'>
           <Image
             src={img}
             alt={title}
             fill
-            priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover object-center"
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            className='object-cover object-center'
           />
         </div>
-        <div className=" flex flex-col gap-2">
+        <div className=' flex flex-col gap-2'>
           {/* flag #1 */}
           <ReactCountryFlag
             svg
             title={country.designed}
             countryCode={country.designed}
-            className="flag-size"
+            className='flag-size'
           />
           {/* flag #2 */}
           <ReactCountryFlag
             svg
             title={country.madeIn}
             countryCode={country.madeIn}
-            className="flag-size"
+            className='flag-size'
           />
         </div>
       </div>
@@ -141,8 +128,8 @@ function Card(props: IGlove): JSX.Element {
       {/* bot bloc */}
       <div>
         <Stats s={stats} />
-        <div className="flex justify-center mt-2">
-          <p className="font-knockoutHeavy text-background text-xl bg-secondary rounded-full px-2">
+        <div className='flex justify-center mt-2'>
+          <p className='font-knockoutHeavy text-background text-xl bg-secondary rounded-full px-2'>
             {globalNote}
           </p>
         </div>
