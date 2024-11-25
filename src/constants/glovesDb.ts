@@ -32,7 +32,7 @@ interface Gloves {
   welter: IGlove[];
   middle: IGlove[];
   heavy: IGlove[];
-  super_heavy: IGlove[];
+  superheavy: IGlove[];
   luxury: IGlove[];
   [key: string]: any;
 }
@@ -104,7 +104,7 @@ export const glovesData: Gloves = {
       brand: "PHENOM",
       title: "SG-210",
       img: "/images/gloves/phenom-SG-210.jpg",
-      country: {designed: "UK", madeIn: "PK"},
+      country: {designed: "GB", madeIn: "PK"},
       videoUrl: "",
       buyUrl: "",
       stars: 5,

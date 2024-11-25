@@ -15,8 +15,6 @@ function BeltCard({ title, p, img, funcToGetCategory }: BeltCardProps): JSX.Elem
     setIsInCard(state => !state);
   }
 
-  console.log(String(isInCard));
-
   return (
     <div
       className='relative w-[165px] h-[180px]'
