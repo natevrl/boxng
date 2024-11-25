@@ -23,13 +23,15 @@ function BeltCard({ title, p, img, funcToGetCategory }: BeltCardProps): JSX.Elem
       onClick={() => funcToGetCategory(title)}
       onMouseEnter={handleIsInCard}
       onMouseLeave={handleIsInCard}>
-      {isInCard && <div className='absolute inset-1 z-10 bg-popover opacity-90 rounded-xl p-4 flex items-center justify-center flex-col text-center text-sm'>
-        <p className="text-xs mb-1">category</p>
-        <h5 className="font-bold">{title}</h5>
-        <Separator className='w-full h-px  bg-primary my-4' orientation='horizontal' />
-        <p className="text-xs mb-1">price</p>
-        <h6 className="font-bold">{p}</h6>
-      </div>}
+      {isInCard && (
+        <div className='absolute inset-1 z-10 bg-popover opacity-90 cursor-pointer rounded-xl p-4 flex items-center justify-center flex-col text-center text-sm'>
+          <p className='text-xs mb-1'>category</p>
+          <h5 className='font-bold'>{title}</h5>
+          <Separator className='w-full h-px  bg-primary my-4' orientation='horizontal' />
+          <p className='text-xs mb-1'>price</p>
+          <h6 className='font-bold'>{p}</h6>
+        </div>
+      )}
       <Image
         src={img}
         alt={title}

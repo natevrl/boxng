@@ -124,7 +124,7 @@ export const glovesData: Gloves = {
     },
   ],
   heavy: [],
-  super_heavy: [],
+  superheavy: [],
   luxury: [
     {
       brand: "DI NARDO",
