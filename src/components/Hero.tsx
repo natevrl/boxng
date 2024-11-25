@@ -19,14 +19,14 @@ function RingImg(): JSX.Element {
 
 function MainCharImg(): JSX.Element {
   return (
-    <div className='absolute w-[600px] h-[500px] bottom-0 right-[10%] mobile:w-screen tablet:right-0 z-20'>
+    <div className='absolute z-20 bottom-0 right-[10%]  w-[600px] h-[500px] desktop:h-[400px] tablet:h-[300px] tablet:right-0 mobile:w-screen '>
       <Image
         src='/images/hero-main-char.svg'
         alt='hero image'
         fill
         priority
         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-        className='tablet:object-cover'
+        className='object-contain tablet:object-right-bottom'
       />
     </div>
   );
@@ -34,14 +34,13 @@ function MainCharImg(): JSX.Element {
 
 function LittleCharImg(): JSX.Element {
   return (
-    <div className='absolute w-[300px] h-[400px] bottom-48 right-[5%] tablet:hidden desktop:right-0 z-10 min-qhd:right-[6%] min-4k:right-[7%]'>
+    <div className='absolute z-10 bottom-48 right-[5%] w-[300px] h-[400px]  tablet:hidden min-qhd:right-[6%] min-4k:right-[7%]'>
       <Image
         src='/images/little-char-2.svg'
         alt='hero image'
         fill
         priority
         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-        className='tablet:object-fill'
       />
     </div>
   );
@@ -61,12 +60,12 @@ function Hero(): JSX.Element {
   return (
     <>
       <HeroBackground />
-      <section className='min-h-[calc(100vh-80px)] flex flex-col items-center mt-20'>
-        <div className='flex flex-col gap-6 items-start w-2/3'>
-          <h1 className='text-7xl leading-none first-line:uppercase font-knockoutHeavy'>
+      <section className='h-screen-nav flex flex-col tablet:items-center min-tablet:justify-center'>
+        <div className='flex flex-col gap-6 items-start tablet:items-center text-center h-2/3 justify-center'>
+          <h1 className='text-7xl tablet:text-5xl mobile:!text-4xl leading-none uppercase font-knockoutHeavy'>
             born <span className='text-secondary'>2 ring</span>
           </h1>
-          <h2 className='font-primary leading-none text-2xl text-secondary italic tracking-normal'>
+          <h2 className='font-primary leading-none text-2xl tablet:text-lg text-secondary italic tracking-normal'>
             "Discover top-rated boxing equipment"
           </h2>
           <div className="flex gap-4">

@@ -85,6 +85,54 @@
 }
 
 @layer components {
+  .link-hover-effect {
+    display: inline-block;
+    position: relative;
+  }
+
+  .link-hover-effect::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: hsl(var(--primary));
+    transition: width 0.3s ease;
+  }
+  .link-hover-effect:hover{
+    color: hsl(var(--primary));
+  }
+
+  .link-hover-effect:hover::after {
+    width: 100%;
+  }
+
+  .btn-hover-effect {
+    display: inline-block;
+    position: relative;
+  }
+
+  .btn-hover-effect::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    z-index: 5;
+    background-color: hsl(var(--secondary));
+    border-radius: calc(var(--radius) - 4px);
+    transition: width 0.5s ease;
+  }
+  .btn-hover-effect:hover{
+    color: white;
+  }
+
+  .btn-hover-effect:hover::after {
+    width: 100%;
+  }
+
   .card-custom-border {
     border-radius: 26px;
     box-shadow: 3px 5px 4px 1px rgba(0, 0, 0, 0.4);
@@ -135,7 +183,7 @@
 
 @layer utilities {
   .contenair {
-    @apply min-lpt:max-w-laptop min-desk:max-w-desktop w-full mx-auto;
+    @apply min-lpt:max-w-laptop w-full mx-auto;
   }
 
   .center-absolute {
@@ -146,11 +194,11 @@
   }
 
   .h-screen-nav {
-    height: calc(100vh - 65.6px);
+    height: calc(100vh - 64px);
   }
   @media (max-width: 768px) {
     .h-screen-nav {
-      height: calc(100vh - 53.6px);
+      height: calc(100vh - 48px);
     }
   }
 
