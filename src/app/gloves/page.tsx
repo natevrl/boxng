@@ -11,7 +11,7 @@ function GlovesPage() {
   }
 
   return (
-    <main className=" h-screen-nav flex gap-8 p-5 md:p-8 tablet:flex-col">
+    <main className=" h-screen-nav flex gap-8 p-5 md:p-8 tablet:flex-col tablet:gap-4">
       <CategorySlider funcToGetCategory={handleSelectedCategory} />
       <CardSection showCategory={selectedCategory} />
     </main>

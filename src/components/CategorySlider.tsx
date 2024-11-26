@@ -101,11 +101,12 @@ function CategorySlider({ funcToGetCategory }: CategorySliderProps): JSX.Element
   return (
     <>
       <section className='flex gap-4 items-center tablet:justify-center'>
-        <div className='min-tbl:hidden flex gap-4'>
+        {/* mobile */}
+        <div className='min-tbl:hidden flex gap-4 items-end'>
           <MobileDialogCategory funcToGetCategory={funcToGetCategory} />
           <HelperDialogButton />
         </div>
-
+        {/* desktop */}
         <div className='tablet:hidden h-full py-8 w-60 flex flex-col items-center gap-4'>
           <h1>Select Category</h1>
           <ScrollArea type='always' className='w-full rounded-xl whitespace-nowrap'>

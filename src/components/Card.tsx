@@ -12,7 +12,7 @@ function StarsRating({ stars }: { stars: number }): JSX.Element {
   function getStarsWithIcons(star: number): JSX.Element[] {
     let stars = [];
     for (let i = 0; i < 5; i++)
-      stars.push(i < star ? <MdOutlineStar size={28} /> : <MdOutlineStarBorder size={28} />);
+      stars.push(i < star ? <MdOutlineStar size={24} /> : <MdOutlineStarBorder size={24} />);
     return stars;
   }
 
@@ -30,7 +30,7 @@ function StarsRating({ stars }: { stars: number }): JSX.Element {
 function Stats({ s }: { s: IGloveStats }): JSX.Element {
   const keys = Object.entries(s);
   return (
-    <div className='font-knockoutHeavyLight flex justify-around items-center text-sm leading-snug tracking-normal border-t-[1.5px] border-t-primary pt-2 mx-4'>
+    <div className='font-knockoutHeavyLight flex justify-around items-center text-sm mobile:text-xs leading-snug tracking-normal mx-4'>
       <div>
         {keys.slice(0, 3).map((key, i) => (
           <p key={i}>
@@ -61,7 +61,7 @@ function Card(props: IGlove): JSX.Element {
 
   return (
     <div
-      className='m-1 relative card-custom-border noise-bg-primary  h-[390px] w-[290px] flex flex-col justify-between p-4 overflow-hidden hover:scale-105 hover:shadow-none'
+      className='m-1 relative card-custom-border noise-bg-primary h-[390px] w-[290px] mobile:h-[360px] mobile:w-[260px] flex flex-col justify-between p-4 overflow-hidden hover:scale-105 hover:shadow-none'
       onMouseEnter={() => setBackgroundSvgHandler(true)}
       onMouseLeave={() => setBackgroundSvgHandler(false)}>
       {/* SVG background image */}
@@ -71,18 +71,18 @@ function Card(props: IGlove): JSX.Element {
           alt='card boom effect on hover'
           fill
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-          className={`object-cover object-center absolute -z-10`}
+          className={`tablet:hidden object-cover object-center absolute -z-10`}
         />
       )}
       {/* top bloc */}
       <div className='flex flex-col justify-center items-center gap-2 z-10'>
         <StarsRating stars={stars} />
         <div>
-          <h4 className='text-center font-knockoutHeavyLight text-sm uppercase tracking-normal'>
+          <h4 className='text-center font-knockoutHeavyLight text-sm mobile:text-xs uppercase tracking-normal'>
             {brand}
           </h4>
           <h3
-            className={`${checkTitleSize} text-center font-knockoutHeavy text-secondary uppercase leading-none`}>
+            className={`${checkTitleSize} text-center font-knockoutHeavy mobile:text-sm  text-secondary uppercase leading-none`}>
             {title}
           </h3>
         </div>
@@ -98,7 +98,7 @@ function Card(props: IGlove): JSX.Element {
           </Button>
         </div>
         {/* glove img */}
-        <div className='relative w-[150px] h-[160px] border-primary card-shadow'>
+        <div className='relative w-[150px] h-[160px] mobile:w-[130px] mobile:h-[140px] border-primary card-shadow'>
           <Image
             src={img}
             alt={title}

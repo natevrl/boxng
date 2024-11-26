@@ -6,7 +6,7 @@ function CardSection({ showCategory }: { showCategory: string }): JSX.Element {
   const categoryItems: IGlove[] = glovesData[showCategory];
   return (
     <ScrollArea type='always'>
-      {showCategory ? <section className='p-2 mr-4 flex flex-wrap gap-4'>
+      {showCategory ? <section className='p-2 mr-4 flex flex-wrap gap-4 tablet:justify-center'>
         {categoryItems.map((glove, i) => (
           <Card
             key={i}
