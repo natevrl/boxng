@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { navData } from "../constants/navDb";
+import { navData } from "@/constants/navDb";
 import { IoClose, IoMenu } from "react-icons/io5";
-import LogoSvg from "./ui/LogoSvg";
+import LogoSvg from "@/components/ui/LogoSvg";
 
 function GradientSeparator(): JSX.Element {
   return (
@@ -51,7 +51,7 @@ function MobileNav(): JSX.Element {
           <nav className='h-full w-full flex flex-col justify-evenly items-center text-secondary tracking-widest uppercase'>
             {navData.map((name, i) => (
               <React.Fragment key={i}>
-                <Link onClick={() => setModalIsOpen(curr => !curr)} href={`/${name}`} >
+                <Link onClick={() => setModalIsOpen(curr => !curr)} href={`/${name}`}>
                   {name}
                 </Link>
                 <GradientSeparator />
@@ -66,7 +66,6 @@ function MobileNav(): JSX.Element {
 }
 
 function LaptopNav(): JSX.Element {
-
   return (
     <nav className='tablet:hidden h-full flex gap-4 justify-end items-center text-white'>
       {navData.map(
@@ -82,12 +81,11 @@ function LaptopNav(): JSX.Element {
 }
 
 function NavBar(): JSX.Element {
-
   return (
     <header className='sticky top-0 z-20 w-full flex  justify-center  px-6 lg:px-8'>
       <div className='relative h-full w-[600px] flex items-center justify-between px-4 bg-popover rounded-b-lg'>
         <Logo />
-        <MobileNav />  
+        <MobileNav />
         <LaptopNav />
       </div>
     </header>

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import ReactCountryFlag from "react-country-flag";
 import { MdOutlineStarBorder, MdOutlineStar } from "react-icons/md";
 import { IoLogoYoutube, IoLogoEuro } from "react-icons/io";

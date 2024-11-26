@@ -1,11 +1,11 @@
 "use client";
 import { useState } from "react";
-import BeltCard from "./BeltCard";
-import { ScrollArea } from "@/src/components/ui/scroll-area";
-import { Separator } from "@/src/components/ui/separator";
-import { categoryData } from "@/src/constants/categoryDb";
+import BeltCard from "@/components/ui/BeltCard";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator";
+import { categoryData } from "@/constants/categoryDb";
 import { IoMdHelpCircle } from "react-icons/io";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -28,6 +28,7 @@ function HelperDialogButton(): JSX.Element {
         <IoMdHelpCircle
           size={40}
           className='icon-shadow bg-background text-popover rounded-full active:shadow-none active:translate-y-1'
+          aria-label="button that display help and settings"
         />
       </DialogTrigger>
       <DialogContent className='sm:max-w-md'>

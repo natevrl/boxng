@@ -1,11 +1,9 @@
 "use client";
-import CardSection from "../components/CardSection";
-import Hero from "../components/Hero";
-import NavBar from "../components/NavBar";
+import Hero from "@/src/components/sections/Hero";
 
 export default function HomePage(): JSX.Element {
   return (
-    <main className="contenair flex flex-col gap-10 px-5 sm:px-8">
+    <main className='contenair flex flex-col gap-10 px-5 sm:px-8'>
       <Hero />
     </main>
   );

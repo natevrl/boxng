@@ -1,6 +1,6 @@
 "use client";
-import CardSection from "@/src/components/CardSection";
-import CategorySlider from "@/src/components/CategorySlider";
+import CardSection from "@/components/sections/CardSection";
+import CategorySlider from "@/components/sections/CategorySlider";
 import React, { useState } from "react";
 
 function GlovesPage() {
@@ -11,7 +11,7 @@ function GlovesPage() {
   }
 
   return (
-    <main className=" h-screen-nav flex gap-8 p-5 md:p-8 tablet:flex-col tablet:gap-4">
+    <main className=' h-screen-nav flex gap-8 p-5 md:p-8 tablet:flex-col tablet:gap-4'>
       <CategorySlider funcToGetCategory={handleSelectedCategory} />
       <CardSection showCategory={selectedCategory} />
     </main>

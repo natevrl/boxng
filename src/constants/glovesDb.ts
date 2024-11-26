@@ -59,7 +59,7 @@ export const glovesData: Gloves = {
     {
       brand: "HIT N MOVE",
       title: "Suvari",
-      img: "/images/hitnmove-suvari.webp",
+      img: "/images/gloves/middle/hitnmove-suvari.webp",
       country: {designed: "US", madeIn: "PK"},
       videoUrl: "",
       buyUrl: "",
@@ -81,7 +81,7 @@ export const glovesData: Gloves = {
     {
       brand: "adidas",
       title: "Adispeed",
-      img: "/images/gloves/adidas-adispeed.jpg",
+      img: "/images/gloves/middle/adidas-adispeed.jpg",
       country: {designed: "DE", madeIn: "PK"},
       videoUrl: "",
       buyUrl: "",
@@ -92,7 +92,7 @@ export const glovesData: Gloves = {
     {
       brand: "ADIDAS",
       title: "Speed Tilt 350",
-      img: "/images/gloves/adidas-speedtilt350.jpg",
+      img: "/images/gloves/middle/adidas-speedtilt350.jpg",
       country: {designed: "DE", madeIn: "PK"},
       videoUrl: "",
       buyUrl: "",
@@ -103,7 +103,7 @@ export const glovesData: Gloves = {
     {
       brand: "PHENOM",
       title: "SG-210",
-      img: "/images/gloves/phenom-SG-210.jpg",
+      img: "/images/gloves/middle/phenom-SG-210.jpg",
       country: {designed: "GB", madeIn: "PK"},
       videoUrl: "",
       buyUrl: "",
@@ -114,7 +114,7 @@ export const glovesData: Gloves = {
     {
       brand: "MESSENGER",
       title: "Pro 3.0 XMT",
-      img: "/images/gloves/messenger-pro3xt.png",
+      img: "/images/gloves/middle/messenger-pro3xt.png",
       country: {designed: "PK", madeIn: "PK"},
       videoUrl: "",
       buyUrl: "",
