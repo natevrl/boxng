@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { useState } from "react";
 import BeltCard from "./BeltCard";
 import { ScrollArea } from "@/src/components/ui/scroll-area";
 import { Separator } from "@/src/components/ui/separator";
@@ -21,7 +21,7 @@ interface CategorySliderProps {
   funcToGetCategory: (category: string) => void;
 }
 
-function HelperDialogButton() {
+function HelperDialogButton(): JSX.Element {
   return (
     <Dialog>
       <DialogTrigger>
@@ -53,12 +53,25 @@ function HelperDialogButton() {
   );
 }
 
-function CategorySlider({ funcToGetCategory }: CategorySliderProps): JSX.Element {
+function MobileDialogCategory({ funcToGetCategory }: CategorySliderProps): JSX.Element {
+  const [open, setOpen] = useState(false);
+
+  function handleOpen() {
+    setOpen(curr => !curr);
+  }
+
   return (
-    <section className='flex gap-4 items-center'>
-      <div className='h-full py-8 w-60 flex flex-col items-center gap-4'>
-        <h1>Select Category</h1>
-        <ScrollArea type='always' className='w-full rounded-xl whitespace-nowrap'>
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <Button variant='outline'>categories</Button>
+      </DialogTrigger>
+      <DialogContent
+        className='w-5/6 h-5/6 flex flex-col items-center justify-center gap-4'
+        aria-describedby={undefined}>
+        <DialogHeader>
+          <DialogTitle>select a category</DialogTitle>
+        </DialogHeader>
+        <ScrollArea type='always' className='w-full h-full rounded-xl whitespace-nowrap'>
           <div className='flex flex-col gap-6 justify-center items-center'>
             {categoryData.map((item, index) => {
               return (
@@ -68,22 +81,61 @@ function CategorySlider({ funcToGetCategory }: CategorySliderProps): JSX.Element
                   p={item.depiction}
                   img={item.img}
                   funcToGetCategory={funcToGetCategory}
+                  mobileDialogState={{ state: true, toggle: handleOpen }}
                 />
               );
             })}
           </div>
         </ScrollArea>
+        <DialogFooter className='sm:justify-start'>
+          <DialogClose asChild>
+            <Button variant='secondary'>Close</Button>
+          </DialogClose>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
+}
 
-        {/* 
+function CategorySlider({ funcToGetCategory }: CategorySliderProps): JSX.Element {
+  return (
+    <>
+      <section className='flex gap-4 items-center tablet:justify-center'>
+        <div className='min-tbl:hidden flex gap-4'>
+          <MobileDialogCategory funcToGetCategory={funcToGetCategory} />
+          <HelperDialogButton />
+        </div>
+
+        <div className='tablet:hidden h-full py-8 w-60 flex flex-col items-center gap-4'>
+          <h1>Select Category</h1>
+          <ScrollArea type='always' className='w-full rounded-xl whitespace-nowrap'>
+            <div className='flex flex-col gap-6 justify-center items-center'>
+              {categoryData.map((item, index) => {
+                return (
+                  <BeltCard
+                    key={index}
+                    title={item.name}
+                    p={item.depiction}
+                    img={item.img}
+                    funcToGetCategory={funcToGetCategory}
+                    mobileDialogState={{ state: false, toggle: () => {} }}
+                  />
+                );
+              })}
+            </div>
+          </ScrollArea>
+
+          {/* 
         Ce boutton va ouvrir une modal avec : 
             --> Une description claire des categorie (les prix),
             --> Comment les gants sont notés (img box2fit)
             --> Une description de chacune des stats 
         */}
-        <HelperDialogButton />
-      </div>
-      <Separator className='h-full bg-primary' orientation='vertical' />
-    </section>
+          <HelperDialogButton />
+        </div>
+        <Separator className='h-full bg-primary tablet:hidden' orientation='vertical' />
+      </section>
+    </>
   );
 }
 

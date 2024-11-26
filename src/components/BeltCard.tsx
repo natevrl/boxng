@@ -7,9 +7,16 @@ interface BeltCardProps {
   p: string;
   img: string;
   funcToGetCategory: (title: string) => void;
+  mobileDialogState: { state: boolean; toggle: () => void };
 }
 
-function BeltCard({ title, p, img, funcToGetCategory }: BeltCardProps): JSX.Element {
+function BeltCard({
+  title,
+  p,
+  img,
+  funcToGetCategory,
+  mobileDialogState,
+}: BeltCardProps): JSX.Element {
   const [isInCard, setIsInCard] = useState(false);
   function handleIsInCard() {
     setIsInCard(state => !state);
@@ -18,7 +25,10 @@ function BeltCard({ title, p, img, funcToGetCategory }: BeltCardProps): JSX.Elem
   return (
     <div
       className='relative w-[165px] h-[180px]'
-      onClick={() => funcToGetCategory(title)}
+      onClick={() => {
+        funcToGetCategory(title);
+        if (mobileDialogState.state) mobileDialogState.toggle();
+      }}
       onMouseEnter={handleIsInCard}
       onMouseLeave={handleIsInCard}>
       {isInCard && (
