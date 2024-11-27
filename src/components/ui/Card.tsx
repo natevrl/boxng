@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import ReactCountryFlag from "react-country-flag";
+// import ReactCountryFlag from "react-country-flag";
 // import { MdOutlineStarBorder, MdOutlineStar } from "react-icons/md";
 // import { IoLogoYoutube, IoLogoEuro } from "react-icons/io";
 import { useState, useCallback } from "react";
@@ -137,19 +137,19 @@ function Card(props: IGlove): JSX.Element {
         </div>
         <div className="flex flex-col gap-2">
           {/* flag #1 */}
-          <ReactCountryFlag
+          {/* <ReactCountryFlag
             svg
             title={country.designed}
             countryCode={country.designed}
             className="flag-size"
-          />
+          /> */}
           {/* flag #2 */}
-          <ReactCountryFlag
+          {/* <ReactCountryFlag
             svg
             title={country.madeIn}
             countryCode={country.madeIn}
             className="flag-size"
-          />
+          /> */}
         </div>
       </div>
 
