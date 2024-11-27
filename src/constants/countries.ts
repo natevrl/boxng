@@ -252,6 +252,8 @@ export const countries = {
 };
 
 export function getCountryCode(countryName: string): string | undefined {
-  const entry = Object.entries(countries).find(([code, name]) => name === countryName);
+  const entry = Object.entries(countries).find(
+    ([code, name]) => name === countryName,
+  );
   return entry ? entry[0] : undefined;
 }

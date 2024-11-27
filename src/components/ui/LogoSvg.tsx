@@ -15,7 +15,11 @@ const LogoSvg: React.FC<LogoSvgProps> = ({ className }) => {
       preserveAspectRatio="xMidYMid meet"
       className={className}
     >
-      <g transform="translate(0.000000,722.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none">
+      <g
+        transform="translate(0.000000,722.000000) scale(0.100000,-0.100000)"
+        fill="currentColor"
+        stroke="none"
+      >
         <path
           d="M2769 7066 c-139 -29 -238 -65 -383 -139 -323 -164 -619 -405 -954
    -777 -215 -239 -446 -560 -562 -782 l-30 -58 57 26 c170 77 358 132 527 155
