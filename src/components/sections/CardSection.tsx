@@ -1,6 +1,6 @@
 import Card from "@/components/ui/Card";
 import { glovesData, IGlove } from "@/constants/glovesDb";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 function CardSection({ showCategory }: { showCategory: string }): JSX.Element {
   const categoryItems: IGlove[] = glovesData[showCategory];

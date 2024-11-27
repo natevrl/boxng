@@ -24,7 +24,7 @@ function BeltCard({
 
   return (
     <div
-      className='relative w-[165px] h-[180px]'
+      className='relative w-[165px] h-[177px]'
       onClick={() => {
         funcToGetCategory(title);
         if (mobileDialogState.state) mobileDialogState.toggle();
@@ -43,6 +43,8 @@ function BeltCard({
       <Image
         src={img}
         alt={title}
+        priority
+        loading="eager"
         fill
         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
       />

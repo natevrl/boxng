@@ -2,36 +2,36 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import ReactCountryFlag from "react-country-flag";
-import { MdOutlineStarBorder, MdOutlineStar } from "react-icons/md";
-import { IoLogoYoutube, IoLogoEuro } from "react-icons/io";
+// import { MdOutlineStarBorder, MdOutlineStar } from "react-icons/md";
+// import { IoLogoYoutube, IoLogoEuro } from "react-icons/io";
 import { useState, useCallback } from "react";
 
-import { glovesData, IGlove, IGloveStats } from "@/src/constants/glovesDb";
+import { IGlove, IGloveStats } from "@/src/constants/glovesDb";
 
-function StarsRating({ stars }: { stars: number }): JSX.Element {
-  function getStarsWithIcons(star: number): JSX.Element[] {
-    let stars = [];
-    for (let i = 0; i < 5; i++)
-      stars.push(
-        i < star ? (
-          <MdOutlineStar size={24} />
-        ) : (
-          <MdOutlineStarBorder size={24} />
-        ),
-      );
-    return stars;
-  }
+// function StarsRating({ stars }: { stars: number }): JSX.Element {
+//   function getStarsWithIcons(star: number): JSX.Element[] {
+//     let stars = [];
+//     for (let i = 0; i < 5; i++)
+//       stars.push(
+//         i < star ? (
+//           <MdOutlineStar size={24} />
+//         ) : (
+//           <MdOutlineStarBorder size={24} />
+//         ),
+//       );
+//     return stars;
+//   }
 
-  return (
-    <ul className="flex">
-      {getStarsWithIcons(stars).map((star, i) => (
-        <li key={i} className="text-secondary hover:scale-110">
-          {star}
-        </li>
-      ))}
-    </ul>
-  );
-}
+//   return (
+//     <ul className="flex">
+//       {getStarsWithIcons(stars).map((star, i) => (
+//         <li key={i} className="text-secondary hover:scale-110">
+//           {star}
+//         </li>
+//       ))}
+//     </ul>
+//   );
+// }
 
 function Stats({ s }: { s: IGloveStats }): JSX.Element {
   const keys = Object.entries(s);
@@ -91,6 +91,8 @@ function Card(props: IGlove): JSX.Element {
       {/* SVG background image */}
       {backgroundSvg && (
         <Image
+          priority
+          loading="eager"
           src="/images/card-boom-effect.svg"
           alt="card boom effect on hover"
           fill
@@ -100,7 +102,7 @@ function Card(props: IGlove): JSX.Element {
       )}
       {/* top bloc */}
       <div className="z-10 flex flex-col items-center justify-center gap-2">
-        <StarsRating stars={stars} />
+        {/* <StarsRating stars={stars} /> */}
         <div>
           <h4 className="text-center font-knockoutHeavyLight text-sm uppercase tracking-normal mobile:text-xs">
             {brand}
@@ -116,10 +118,10 @@ function Card(props: IGlove): JSX.Element {
       <div className="z-10 flex items-center justify-evenly">
         <div className="flex max-w-10 flex-col gap-1">
           <Button variant="secondary" className="rounded-t-full py-5">
-            <IoLogoYoutube className="icon-size" />
+            {/* <IoLogoYoutube className="icon-size" /> */}
           </Button>
           <Button className="rounded-b-full bg-accent hover:bg-accent/80">
-            <IoLogoEuro className="icon-size" />
+            {/* <IoLogoEuro className="icon-size" /> */}
           </Button>
         </div>
         {/* glove img */}
@@ -127,6 +129,7 @@ function Card(props: IGlove): JSX.Element {
           <Image
             src={img}
             alt={title}
+            loading="eager"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover object-center"

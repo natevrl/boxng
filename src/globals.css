@@ -123,7 +123,7 @@
     z-index: 5;
     background-color: hsl(var(--secondary));
     border-radius: calc(var(--radius) - 4px);
-    transition: width 0.5s ease;
+    transition: width 0.3s ease;
   }
   .btn-hover-effect:hover {
     color: white;

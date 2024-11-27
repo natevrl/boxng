@@ -8,7 +8,7 @@ function RingImg(): JSX.Element {
     <div
       className="h-full w-full"
       style={{
-        backgroundImage: "url('/images/ring.png')",
+        backgroundImage: "url('/images/hero/ring.webp')",
         backgroundPosition: "bottom",
         backgroundSize: "auto",
         backgroundRepeat: "repeat-x",
@@ -21,7 +21,7 @@ function MainCharImg(): JSX.Element {
   return (
     <div className="absolute bottom-0 right-[10%] z-20 h-[500px] w-[600px] mobile:w-screen tablet:right-0 tablet:h-[300px] desktop:h-[400px]">
       <Image
-        src="/images/hero-main-char.svg"
+        src="/images/hero/hero-main-char.svg"
         alt="hero image"
         fill
         priority
@@ -36,7 +36,7 @@ function LittleCharImg(): JSX.Element {
   return (
     <div className="absolute bottom-48 right-[5%] z-10 h-[400px] w-[300px] tablet:hidden min-qhd:right-[6%] min-4k:right-[7%]">
       <Image
-        src="/images/little-char-2.svg"
+        src="/images/hero/little-char.svg"
         alt="hero image"
         fill
         priority

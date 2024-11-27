@@ -4,11 +4,12 @@ import { Inter } from "next/font/google";
 import "@/src/globals.css";
 import NavBar from "@/components/layout/NavBar";
 import Footer from "@/components/layout/Footer";
-import { usePathname } from "next/navigation";
 
 const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {

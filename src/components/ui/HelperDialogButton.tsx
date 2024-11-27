@@ -22,7 +22,13 @@ Ce boutton va ouvrir une modal avec :
 // h2 category details
 // h2 how we note
 // h2 statistics details
-
+function HelperContent() : JSX.Element {
+  return (
+    <div>
+      
+    </div>
+  );
+}
 
 
 export default function HelperDialogButton(): JSX.Element {
