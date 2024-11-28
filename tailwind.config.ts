@@ -9,12 +9,12 @@ const config: Config = {
   ],
   theme: {
     animation: {
-      'bounce': "bounce 2s infinite",
+      bounce: "bounce 2s infinite",
     },
     fontFamily: {
       primary: "var(--font-inter)",
-      knockoutHeavy: ['knockout-heavy', 'sans-serif'],
-      knockoutHeavyLight: ['knockout-heavy-light', 'sans-serif'],
+      knockoutHeavy: ["knockout-heavy", "sans-serif"],
+      knockoutHeavyLight: ["knockout-heavy-light", "sans-serif"],
     },
     extend: {
       colors: {
@@ -65,35 +65,56 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       screens: {
-        'mobile': {'max': '479px'},
-        'tablet': {'max': '767px'},
-        'laptop': {'max': '1023px'},
-        'desktop': {'max': '1439px'},
-        'fhd': {'max': '1919px'},
-        'qhd': {'max': '2559px '},
-        '4k': {'max': '3839px '},
-        'min-mbl': {'min': '480px'},
-        'min-tbl': {'min': '768px'},
-        'min-lpt': {'min': '1024px'},
-        'min-desk': {'min': '1440px'},
-        'min-fhd': {'min': '1920px'},
-        'min-qhd': {'min': '2560px '},
-        'min-4k': {'min': '3840px '},
-        
+        mobile: {max: "479px"},
+        tablet: {max: "767px"},
+        laptop: {max: "1023px"},
+        desktop: {max: "1439px"},
+        fhd: {max: "1919px"},
+        qhd: {max: "2559px"},
+        "4k": {max: "3839px"},
+        "min-mbl": {min: "480px"},
+        "min-tbl": {min: "768px"},
+        "min-lpt": {min: "1024px"},
+        "min-desk": {min: "1440px"},
+        "min-fhd": {min: "1920px"},
+        "min-qhd": {min: "2560px "},
+        "min-4k": {min: "3840px "},
       },
       width: {
-        mobile: '480px',
-        tablet: '768px',
-        laptop: '1024px',
-        desktop: '1440px',
-        largeDesktop: '1920px',
+        mobile: "480px",
+        tablet: "768px",
+        laptop: "1024px",
+        desktop: "1440px",
+        largeDesktop: "1920px",
       },
       maxWidth: {
-        mobile: '480px',
-        tablet: '768px',
-        laptop: '1024px',
-        desktop: '1440px',
-        largeDesktop: '1920px',
+        mobile: "480px",
+        tablet: "768px",
+        laptop: "1024px",
+        desktop: "1440px",
+        largeDesktop: "1920px",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
+        },
+        "accordion-up": {
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },

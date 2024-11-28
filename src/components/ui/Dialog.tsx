@@ -1,39 +1,27 @@
 import { useState, useEffect, useRef } from "react";
 
-
-
-/* 
-Ce boutton va ouvrir une modal avec : 
-  --> Une description claire des categorie (les prix),
-  --> Comment les gants sont notés (img box2fit)
-  --> Une description de chacune des stats 
-*/
-
-// h2 category details
-// h2 how we note
-// h2 statistics details
-// function HelperContent() : JSX.Element {
-//   return (
-//     <div>
-
-//     </div>
-//   );
-// }
-
-
 type DialogProps = {
   title: string;
   children: React.ReactNode;
-  triggerButton: React.ReactNode; // Le bouton déclencheur personnalisé
+  triggerButton: React.ReactNode;
+  className: string;
 };
 
-const Dialog: React.FC<DialogProps> = ({ title, children, triggerButton }) => {
+const Dialog: React.FC<DialogProps> = ({
+  title,
+  children,
+  triggerButton,
+  className = "",
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const dialogRef = useRef<HTMLDivElement>(null);
 
-  // Fonction pour fermer le modal si on clique en dehors
+  // Fonction pour fermer la modal si on clique en dehors
   const handleClickOutside = (event: MouseEvent) => {
-    if (dialogRef.current && !dialogRef.current.contains(event.target as Node)) {
+    if (
+      dialogRef.current &&
+      !dialogRef.current.contains(event.target as Node)
+    ) {
       setIsOpen(false);
     }
   };
@@ -57,25 +45,25 @@ const Dialog: React.FC<DialogProps> = ({ title, children, triggerButton }) => {
 
       {/* Overlay et Dialog */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+          aria-label={title}
+        >
           {/* Dialog box */}
           <div
             ref={dialogRef}
-            className="relative bg-white rounded-lg shadow-lg w-96 p-6"
+            className={`${className} relative rounded-xl bg-background shadow-lg`}
           >
             {/* Titre */}
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold">{title}</h2>
-              {/* Icone de fermeture */}
-              <button
-                onClick={() => setIsOpen(false)}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                ✕
-              </button>
-            </div>
+            {/* Icone de fermeture */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute right-4 top-3 z-50 text-2xl text-secondary hover:text-secondary/60"
+            >
+              ✕
+            </button>
             {/* Contenu du Dialog */}
-            <div>{children}</div>
+            <div className="h-full w-full p-1">{children}</div>
           </div>
         </div>
       )}
@@ -83,29 +71,4 @@ const Dialog: React.FC<DialogProps> = ({ title, children, triggerButton }) => {
   );
 };
 
-
 export default Dialog;
-
-// function HelperDialog(): JSX.Element {
-//   return <section on className="center-absolute center- h-4/6 w-4/6 max-w-screen-xl bg-red-400">test</section>;
-// }
-
-// export default function HelperDialogButton(): JSX.Element {
-//   const [isOpen, setIsOpen] = useState(false);
-//   function handleOpening() {
-//     setIsOpen((state) => !state);
-//   }
-//   return (
-//     <>
-//       <button onClick={handleOpening}>
-//         <IoMdHelpCircle
-//           size={40}
-//           className="icon-shadow rounded-full bg-background text-popover active:translate-y-1 active:shadow-none"
-//           aria-label="button that display help and settings"
-//         />
-//       </button>
-
-//       {isOpen && <HelperDialog />}
-//     </>
-//   );
-// }

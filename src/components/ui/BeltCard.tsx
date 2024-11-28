@@ -36,7 +36,7 @@ function BeltCard({
           <p className='text-xs mb-1'>category</p>
           <h5 className='font-bold'>{title}</h5>
           <Separator className='w-full h-px  bg-primary my-4' orientation='horizontal' />
-          <p className='text-xs mb-1'>price</p>
+          <p className='text-xs mb-1'>price (€)</p>
           <h6 className='font-bold'>{p}</h6>
         </div>
       )}
