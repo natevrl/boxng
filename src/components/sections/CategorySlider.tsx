@@ -2,8 +2,10 @@ import BeltCard from "@/components/ui/BeltCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { categoryData } from "@/constants/categoryDb";
-import HelperDialogButton from "@/components/ui/HelperDialogButton";
+import Dialog from "@/components/ui/Dialog";
 import MobileDialogCategory from "@/components/sections/MobileDialogCategory";
+import { IoMdHelpCircle } from "react-icons/io";
+import { Button } from "@/components/ui/button";
 
 interface CategorySliderProps {
   funcToGetCategory: (category: string) => void;
@@ -18,7 +20,23 @@ function CategorySlider({
         {/* mobile */}
         <div className="flex items-end gap-4 min-tbl:hidden">
           <MobileDialogCategory funcToGetCategory={funcToGetCategory} />
-          <HelperDialogButton />
+          <Dialog
+            title="helper menu"
+            triggerButton={
+              <IoMdHelpCircle
+                size={40}
+                className="icon-shadow rounded-full bg-background text-popover active:translate-y-1 active:shadow-none"
+                aria-label="button that display help and settings"
+              />
+            }
+          >
+            <h1>Help</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              pulvinar, purus eget cursus pharetra, ex mi ultrices nunc, nec
+              tincidunt
+            </p>
+          </Dialog>
         </div>
         {/* desktop */}
         <div className="flex h-full w-60 flex-col items-center gap-4 py-8 tablet:hidden">
@@ -42,7 +60,7 @@ function CategorySlider({
               })}
             </div>
           </ScrollArea>
-          <HelperDialogButton />
+          {/* <HelperDialogButton /> */}
         </div>
         <Separator
           className="h-full bg-primary tablet:hidden"

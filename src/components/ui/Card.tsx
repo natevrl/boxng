@@ -1,37 +1,37 @@
 "use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-// import ReactCountryFlag from "react-country-flag";
-// import { MdOutlineStarBorder, MdOutlineStar } from "react-icons/md";
-// import { IoLogoYoutube, IoLogoEuro } from "react-icons/io";
+import ReactCountryFlag from "react-country-flag";
+import { MdOutlineStarBorder, MdOutlineStar } from "react-icons/md";
+import { IoLogoYoutube, IoLogoEuro } from "react-icons/io";
 import { useState, useCallback } from "react";
 
 import { IGlove, IGloveStats } from "@/src/constants/glovesDb";
 
-// function StarsRating({ stars }: { stars: number }): JSX.Element {
-//   function getStarsWithIcons(star: number): JSX.Element[] {
-//     let stars = [];
-//     for (let i = 0; i < 5; i++)
-//       stars.push(
-//         i < star ? (
-//           <MdOutlineStar size={24} />
-//         ) : (
-//           <MdOutlineStarBorder size={24} />
-//         ),
-//       );
-//     return stars;
-//   }
+function StarsRating({ stars }: { stars: number }): JSX.Element {
+  function getStarsWithIcons(star: number): JSX.Element[] {
+    let stars = [];
+    for (let i = 0; i < 5; i++)
+      stars.push(
+        i < star ? (
+          <MdOutlineStar size={24} />
+        ) : (
+          <MdOutlineStarBorder size={24} />
+        ),
+      );
+    return stars;
+  }
 
-//   return (
-//     <ul className="flex">
-//       {getStarsWithIcons(stars).map((star, i) => (
-//         <li key={i} className="text-secondary hover:scale-110">
-//           {star}
-//         </li>
-//       ))}
-//     </ul>
-//   );
-// }
+  return (
+    <ul className="flex">
+      {getStarsWithIcons(stars).map((star, i) => (
+        <li key={i} className="text-secondary hover:scale-110">
+          {star}
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 function Stats({ s }: { s: IGloveStats }): JSX.Element {
   const keys = Object.entries(s);
@@ -137,19 +137,19 @@ function Card(props: IGlove): JSX.Element {
         </div>
         <div className="flex flex-col gap-2">
           {/* flag #1 */}
-          {/* <ReactCountryFlag
+          <ReactCountryFlag
             svg
             title={country.designed}
             countryCode={country.designed}
             className="flag-size"
-          /> */}
+          />
           {/* flag #2 */}
-          {/* <ReactCountryFlag
+          <ReactCountryFlag
             svg
             title={country.madeIn}
             countryCode={country.madeIn}
             className="flag-size"
-          /> */}
+          />
         </div>
       </div>
 
