@@ -17,6 +17,9 @@ const config: Config = {
       knockoutHeavyLight: ["knockout-heavy-light", "sans-serif"],
     },
     extend: {
+      fontSize: {
+        clamp: "clamp(2rem, 20vw, 170px)",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

@@ -9,8 +9,7 @@ interface VideoProps {
 function VideoComponent({src, w, h} : VideoProps) : JSX.Element {
   return (
     <iframe
-    width={w}
-    height={h}
+    className={`w-full max-w-screen-md overflow-hidden aspect-video`}
     src={src}
     title="YouTube video player"
   />

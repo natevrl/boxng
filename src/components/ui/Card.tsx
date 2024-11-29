@@ -25,7 +25,7 @@ function StarsRating({ stars }: { stars: number }): JSX.Element {
   return (
     <ul className="flex">
       {getStarsWithIcons(stars).map((star, i) => (
-        <li key={i} className="text-secondary hover:scale-110">
+        <li key={i} className="hover:scale-110">
           {star}
         </li>
       ))}
@@ -102,7 +102,7 @@ function Card(props: IGlove): JSX.Element {
       )}
       {/* top bloc */}
       <div className="z-10 flex flex-col items-center justify-center gap-2">
-        {/* <StarsRating stars={stars} /> */}
+        <StarsRating stars={stars} />
         <div>
           <h4 className="text-center font-knockoutHeavyLight text-sm uppercase tracking-normal mobile:text-xs">
             {brand}

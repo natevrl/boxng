@@ -28,7 +28,7 @@ function Footer(): JSX.Element {
       {/* left */}
       <div>
         <p className="font-bold text-popover">
-          &copy;2024 Born2Ring-{" "}
+          &copy;2024 Boxng-{" "}
           <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
         </p>
         <p className="mt-3 text-sm text-popover">

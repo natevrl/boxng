@@ -95,14 +95,14 @@ function page() {
             infrastructure itself (for example, the duration of a page visit).
           </li>
           <li>
-            <strong>Website</strong> refers to Born2ring, accessible from&nbsp;
+            <strong>Website</strong> refers to Boxng, accessible from&nbsp;
             <a
               className="underline underline-offset-4"
               rel="external nofollow noopener"
               target="_blank"
-              href="https://born2ring.com/"
+              href="https://boxng.pro/"
             >
-              https://born2ring.com/
+              https://boxng.pro/
             </a>
           </li>
           <li>
@@ -546,7 +546,7 @@ function page() {
           If you have any questions about this Privacy Policy, You can contact
           us at&nbsp;
           <span className="underline underline-offset-4">
-            website.born2ring@gmail.com
+            website.boxng@gmail.com
           </span>
         </p>
       </section>

@@ -17,7 +17,7 @@ function HelperDialogButton(): JSX.Element {
     <>
       <IoMdHelpCircle
         size={40}
-        className="icon-shadow rounded-full bg-background text-popover active:translate-y-1 active:shadow-none"
+        className="icon-shadow rounded-full bg-background text-popover"
         aria-label="button that display help and settings"
       />
     </>
@@ -88,9 +88,9 @@ function HelperDialogContent(): JSX.Element {
     return (
       <div
         key={item.key}
-        className="flex flex-col items-center gap-3 text-center"
+        className="flex flex-col items-center gap-8 text-center"
       >
-        <h2 className="font-bold uppercase">{item.title}</h2>
+        <h2 className="font-bold uppercase mb-4">{item.title}</h2>
         {item.content}
         {i !== helperContent.length - 1 && (
           <Separator className="my-8 bg-popover" />

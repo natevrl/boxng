@@ -20,19 +20,16 @@ function Logo(): JSX.Element {
   );
 }
 
-function NavButton({ isMobile = false }: { isMobile?: boolean }): JSX.Element {
-  const btnStyle = isMobile
-    ? "bg-popover text-white"
-    : "bg-background text-popover";
+function NavButton(): JSX.Element {
   return (
-    <button className={`btn-hover-effect rounded-sm px-3 py-1 ${btnStyle}`}>
+    <button className={`btn-hover-effect rounded-full px-8 py-2 bg-secondary text-white hover:bg-secondary/80`}>
       <a
         href="https://www.youtube.com/@Fit2Box/"
         target="_blank"
         rel="noopener noreferrer"
         className="relative z-10"
       >
-        fit2box Channel
+        fit2box &nbsp;<span className="relative bottom-px">▶</span>
       </a>
     </button>
   );
@@ -64,7 +61,7 @@ function MobileNav(): JSX.Element {
                 <GradientSeparator />
               </React.Fragment>
             ))}
-            <NavButton isMobile={true} />
+            <NavButton />
           </nav>
         </div>
       )}
