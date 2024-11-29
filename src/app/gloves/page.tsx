@@ -4,7 +4,7 @@ import CategorySlider from "@/components/sections/CategorySlider";
 import React, { useState } from "react";
 
 function GlovesPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("middle");
 
   function handleSelectedCategory(title: string) {
     setSelectedCategory(title);

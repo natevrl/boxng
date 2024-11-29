@@ -4,11 +4,13 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 function CardSection({ showCategory }: { showCategory: string }): JSX.Element {
   const categoryItems: IGlove[] = glovesData[showCategory];
+  const sortedList = categoryItems.sort((a, b) => b.globalNote - a.globalNote);
+  
   return (
     <ScrollArea type="always">
       {showCategory ? (
         <section className="mr-4 flex flex-wrap gap-4 p-2 tablet:justify-center">
-          {categoryItems.map((glove, i) => (
+          {sortedList.map((glove, i) => (
             <Card
               key={i}
               brand={glove.brand}

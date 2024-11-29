@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { navData } from "@/constants/utils";
 import { IoClose, IoMenu } from "react-icons/io5";
