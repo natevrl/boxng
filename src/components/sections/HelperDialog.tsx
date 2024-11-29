@@ -57,7 +57,7 @@ function HelperDialogContent(): JSX.Element {
           {statsData.map((stat, i) => {
             return (
               <AccordionItem key={i} value={stat.abbreviation}>
-                <AccordionTrigger>{stat.name } ({stat.abbreviation})</AccordionTrigger>
+                <AccordionTrigger className="link-hover-effect">{stat.name } ({stat.abbreviation})</AccordionTrigger>
                 <AccordionContent>{stat.details}</AccordionContent>
               </AccordionItem>
             );

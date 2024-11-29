@@ -41,7 +41,7 @@ const Dialog: React.FC<DialogProps> = ({
   return (
     <>
       {/* Bouton déclencheur */}
-      <div onClick={() => setIsOpen(true)}>{triggerButton}</div>
+      <div onClick={() => setIsOpen(true)} className="cursor-pointer">{triggerButton}</div>
 
       {/* Overlay et Dialog */}
       {isOpen && (
