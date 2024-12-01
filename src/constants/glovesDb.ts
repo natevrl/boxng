@@ -1,3 +1,5 @@
+import { PiKanban } from "react-icons/pi";
+
 export interface IGloveStats {
   STYL: number;
   COMF: number;
@@ -33,6 +35,129 @@ interface Gloves {
   luxury: IGlove[];
   [key: string]: any;
 }
+
+/*
+FEATHER :
+94.6
+PLAYERZ 
+Spartech
+UK PK
+94 STYL 94 SPAR
+94 COMF 93 BAG
+94 DURA
+99 V4M
+2
+
+
+93.6
+UNIFIED BOXING 
+NXT LVL
+UK PK
+93 STYL
+93 SPAR
+93 COMF
+93 BAG
+93 DURA
+97 V4M
+0
+
+
+92.8
+DECHA
+TH TH
+92 STYL
+92 SPAR
+92 COMF
+92 BAG
+93 DURA
+96 V4M
+0
+
+
+92.8
+PLAYERZ 
+Crown
+UK PK
+92 STYL 92 SPAR
+92 COMF
+93 BAG
+92 DURA
+96 V4M
+0
+
+
+92.6
+UNIFIED BOXING
+PRO STANDARD ELITE
+UK PK
+92 STYL
+92 SPAR
+92 COMF
+92 BAG
+92 DURA
+96 V4M
+0
+
+ */
+
+/*
+WELTER
+
+96.0
+DEUS Sparta
+UK PK
+94 STYL 96 SPAR
+96 COMF 95 BAG
+96 DURA
+99 V4M
+4
+
+
+95.5
+MESSENGER
+Elite Edition XXQ 
+PK PK
+93 STYL 95 SPAR
+95 COMF 95 BAG
+96 DURA
+99 V4M
+3
+
+
+95.5
+HOTLINE
+JP PK
+94 STYL 95 SPAR
+95 COMF 95 BAG
+96 DURA 98 V4M
+3
+
+
+95.3
+BRAVOSE 
+Titan Grip
+UK PK
+95 STYL
+94 SPAR
+95 COMF
+94 BAG
+95 DURA
+99 V4M
+3
+
+
+
+95.1
+PLAYERZ 
+Raider
+UK PK
+96 STYL 94 SPAR
+95 COMF 95 BAG
+95 DURA 96 V4M TOTAL 571
+3
+*/
+
+
 
 // -- TEMPLATE --
 /*
