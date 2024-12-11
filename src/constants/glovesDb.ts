@@ -41,7 +41,7 @@ FEATHER :
 94.6
 PLAYERZ 
 Spartech
-UK PK
+GB PK
 94 STYL 94 SPAR
 94 COMF 93 BAG
 94 DURA
@@ -52,7 +52,7 @@ UK PK
 93.6
 UNIFIED BOXING 
 NXT LVL
-UK PK
+GB PK
 93 STYL
 93 SPAR
 93 COMF
@@ -77,7 +77,7 @@ TH TH
 92.8
 PLAYERZ 
 Crown
-UK PK
+GB PK
 92 STYL 92 SPAR
 92 COMF
 93 BAG
@@ -89,7 +89,7 @@ UK PK
 92.6
 UNIFIED BOXING
 PRO STANDARD ELITE
-UK PK
+GB PK
 92 STYL
 92 SPAR
 92 COMF
@@ -105,7 +105,7 @@ WELTER
 
 96.0
 DEUS Sparta
-UK PK
+GB PK
 94 STYL 96 SPAR
 96 COMF 95 BAG
 96 DURA
@@ -136,7 +136,7 @@ JP PK
 95.3
 BRAVOSE 
 Titan Grip
-UK PK
+GB PK
 95 STYL
 94 SPAR
 95 COMF
@@ -150,7 +150,7 @@ UK PK
 95.1
 PLAYERZ 
 Raider
-UK PK
+GB PK
 96 STYL 94 SPAR
 95 COMF 95 BAG
 95 DURA 96 V4M TOTAL 571
@@ -164,7 +164,7 @@ UK PK
 94.6
 GEEZERS 
 Halo
-UK PK
+GB PK
 94 STYL
 94 SPAR
 95 COMF
@@ -178,7 +178,7 @@ UK PK
 94.1
 PRO-AM
 Retro
-UK PK
+GB PK
 93 STYL 94 SPAR
 94 COMF
 94 BAG
@@ -218,7 +218,7 @@ CA PK
 93.8
 TITAN 
 Velocity
-UK PK
+GB PK
 93 STYL
 94 SPAR
 93 COMF
@@ -232,7 +232,7 @@ heavy:
 
 96.8
 FLY Superlace Lightning
-UK UK
+GB GB
 98 STYL 98 SPAR
 98 COMF
 96 BAG
@@ -245,7 +245,7 @@ UK UK
 96.6
 FLY
 Superlace
-UK UK
+GB GB
 96 STYL
 98 SPAR
 98 COMF
@@ -259,7 +259,7 @@ UK UK
 96.6
 HIT N MOVE
 Balance
-USA PK
+US PK
 95 STYL
 97 SPAR
 97 COMF
@@ -294,8 +294,6 @@ FR FR
 
 */
 
-
-
 // -- TEMPLATE --
 /*
 {
@@ -312,8 +310,175 @@ FR FR
 */
 
 export const glovesData: Gloves = {
-  feather: [],
-  welter: [],
+  feather: [
+    {
+      brand: "PLAYERZ",
+      title: "Spartech",
+      img: "/images/gloves/feather/playerz-spartech.webp",
+      country: { designed: "GB", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 2,
+      globalNote: 94.6,
+      stats: { STYL: 94, COMF: 94, DURA: 94, SPAR: 94, BAG: 93, V4M: 99 },
+    },
+    {
+      brand: "UNIFIED BOXING",
+      title: "NXT LVL",
+      img: "/images/gloves/feather/unifiedboxing-nxtlvl.webp",
+      country: { designed: "GB", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 0,
+      globalNote: 93.6,
+      stats: { STYL: 93, COMF: 93, DURA: 93, SPAR: 93, BAG: 93, V4M: 97 },
+    },
+    {
+      brand: "DECHA",
+      title: "DECHA",
+      img: "/images/gloves/feather/decha.jpg",
+      country: { designed: "TH", madeIn: "TH" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 0,
+      globalNote: 92.8,
+      stats: { STYL: 92, COMF: 92, DURA: 93, SPAR: 92, BAG: 92, V4M: 96 },
+    },
+    {
+      brand: "PLAYERZ",
+      title: "Crown",
+      img: "/images/gloves/feather/playerz-crown.jpg",
+      country: { designed: "GB", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 0,
+      globalNote: 92.8,
+      stats: { STYL: 92, COMF: 92, DURA: 92, SPAR: 92, BAG: 93, V4M: 96 },
+    },
+    {
+      brand: "UNIFIED BOXING",
+      title: "PRO STANDARD ELITE",
+      img: "/images/gloves/feather/unifiedboxing-prostandardelite.webp",
+      country: { designed: "GB", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 0,
+      globalNote: 92.6,
+      stats: { STYL: 92, COMF: 92, DURA: 92, SPAR: 92, BAG: 92, V4M: 96 },
+    },
+  ],
+  welter: [
+    {
+      brand: "DEUS",
+      title: "Sparta",
+      img: "/images/gloves/welter/deus-sparta.webp",
+      country: { designed: "GB", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 4,
+      globalNote: 96.0,
+      stats: { STYL: 94, COMF: 96, DURA: 96, SPAR: 96, BAG: 95, V4M: 99 },
+    },
+    {
+      brand: "MESSENGER",
+      title: "Elite Edition XXQ",
+      img: "/images/gloves/welter/messenger-eliteeditionxxq.webp",
+      country: { designed: "PK", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 3,
+      globalNote: 95.5,
+      stats: { STYL: 93, COMF: 95, DURA: 96, SPAR: 95, BAG: 95, V4M: 99 },
+    },
+    {
+      brand: "HOTLINE",
+      title: "HOTLINE",
+      img: "/images/gloves/welter/hotline.webp",
+      country: { designed: "JP", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 3,
+      globalNote: 95.5,
+      stats: { STYL: 94, COMF: 95, DURA: 96, SPAR: 95, BAG: 95, V4M: 98 },
+    },
+    {
+      brand: "BRAVOSE",
+      title: "Titan Grip",
+      img: "/images/gloves/welter/bravose-titangrip.webp",
+      country: { designed: "GB", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 3,
+      globalNote: 95.3,
+      stats: { STYL: 95, COMF: 95, DURA: 95, SPAR: 94, BAG: 94, V4M: 99 },
+    },
+    {
+      brand: "PLAYERZ",
+      title: "Raider",
+      img: "/images/gloves/welter/playerz-raider.webp",
+      country: { designed: "GB", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 3,
+      globalNote: 95.1,
+      stats: { STYL: 96, COMF: 95, DURA: 95, SPAR: 94, BAG: 95, V4M: 96 },
+    },
+    {
+      brand: "GEEZERS",
+      title: "Halo",
+      img: "/images/gloves/welter/geezers-halo.webp",
+      country: { designed: "GB", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 2,
+      globalNote: 94.6,
+      stats: { STYL: 94, COMF: 95, DURA: 95, SPAR: 94, BAG: 95, V4M: 95 },
+    },
+    {
+      brand: "PRO-AM",
+      title: "Retro",
+      img: "/images/gloves/welter/proam-retro.webp",
+      country: { designed: "GB", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 1,
+      globalNote: 94.1,
+      stats: { STYL: 93, COMF: 94, DURA: 94, SPAR: 94, BAG: 94, V4M: 96 },
+    },
+    {
+      brand: "EVERLAST",
+      title: "Powerlock 2 Leather",
+      img: "/images/gloves/welter/everlast-powerlock2leather.webp",
+      country: { designed: "US", madeIn: "IN" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 0,
+      globalNote: 94.0,
+      stats: { STYL: 94, COMF: 94, DURA: 94, SPAR: 93, BAG: 94, V4M: 95 },
+    },
+    {
+      brand: "INFINITUDE",
+      title: "INFINITUDE",
+      img: "/images/gloves/welter/infinitude.webp",
+      country: { designed: "CA", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 0,
+      globalNote: 93.8,
+      stats: { STYL: 94, COMF: 93, DURA: 92, SPAR: 94, BAG: 93, V4M: 97 },
+    },
+    {
+      brand: "TITAN",
+      title: "Velocity",
+      img: "/images/gloves/welter/titan-velocity.webp",
+      country: { designed: "GB", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 0,
+      globalNote: 93.8,
+      stats: { STYL: 93, COMF: 93, DURA: 95, SPAR: 94, BAG: 93, V4M: 95 },
+    },
+  ],
   middle: [
     {
       brand: "HIT N MOVE",
@@ -382,7 +547,63 @@ export const glovesData: Gloves = {
       stats: { STYL: 95, COMF: 96, DURA: 97, SPAR: 96, BAG: 95, V4M: 99 },
     },
   ],
-  heavy: [],
+  heavy: [
+    {
+      brand: "ROCKKICK",
+      title: "rockkick", // Modèle et marque identiques ici
+      img: "/images/gloves/heavy/rockkick.webp",
+      country: { designed: "FR", madeIn: "FR" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 4,
+      globalNote: 96.0,
+      stats: { STYL: 97, COMF: 96, DURA: 96, SPAR: 96, BAG: 96, V4M: 95 },
+    },
+    {
+      brand: "FLY",
+      title: "Superlace",
+      img: "/images/gloves/heavy/fly-superlace.webp",
+      country: { designed: "GB", madeIn: "GB" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 5,
+      globalNote: 96.6,
+      stats: { STYL: 96, COMF: 98, DURA: 97, SPAR: 98, BAG: 96, V4M: 95 },
+    },
+    {
+      brand: "FLY",
+      title: "Superlace Lightning",
+      img: "/images/gloves/heavy/fly-superlacelightning.webp", // Assure-toi que la catégorie est bien "HEAVY"
+      country: { designed: "GB", madeIn: "GB" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 5,
+      globalNote: 96.8,
+      stats: { STYL: 98, COMF: 98, DURA: 96, SPAR: 98, BAG: 96, V4M: 95 },
+    },
+    {
+      brand: "HIT N MOVE",
+      title: "Balance",
+      img: "/images/gloves/heavy/hitnmove-balance.webp",
+      country: { designed: "US", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 5,
+      globalNote: 96.6,
+      stats: { STYL: 95, COMF: 97, DURA: 96, SPAR: 97, BAG: 97, V4M: 98 },
+    },
+    {
+      brand: "WINNING",
+      title: "MS",
+      img: "/images/gloves/heavy/winning-ms.webp",
+      country: { designed: "JP", madeIn: "JP" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 5,
+      globalNote: 96.5,
+      stats: { STYL: 94, COMF: 97, DURA: 98, SPAR: 97, BAG: 97, V4M: 96 },
+    },
+  ],
   superheavy: [],
   luxury: [
     {

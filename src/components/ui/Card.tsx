@@ -227,7 +227,7 @@ function Stats({ s }: { s: IGloveStats }): JSX.Element {
       <div>
         {keys.slice(0, 3).map((key, i) => (
           <p key={i}>
-            <span className="mr-1 font-knockoutHeavy text-secondary">
+            <span className="mr-1 font-bold text-secondary">
               {key[1]}
             </span>{" "}
             {key[0]}
@@ -237,7 +237,7 @@ function Stats({ s }: { s: IGloveStats }): JSX.Element {
       <div>
         {keys.slice(3).map((key, i) => (
           <p key={i}>
-            <span className="mr-1 font-knockoutHeavy text-secondary">
+            <span className="mr-1 font-bold  text-secondary">
               {key[1]}
             </span>{" "}
             {key[0]}
