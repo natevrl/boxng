@@ -1,13 +1,13 @@
 "use client";
+import { useState, useCallback, ReactNode } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import ReactCountryFlag from "react-country-flag";
 import { MdOutlineStarBorder, MdOutlineStar } from "react-icons/md";
 import { IoLogoYoutube, IoLogoEuro } from "react-icons/io";
-import { useState, useCallback, ReactNode } from "react";
+import ReactCountryFlag from "react-country-flag";
 
-import { IGlove, IGloveStats } from "@/src/constants/glovesDb";
 import { cn } from "@/src/constants/utils";
+import { IGlove, IGloveStats } from "@/src/constants/glovesDb";
+import { Button } from "@/components/ui/button";
 
 export default function Card(props: IGlove): JSX.Element {
   const {
@@ -60,10 +60,13 @@ function CardContent({
     setBackgroundSvg(value);
   }, []);
 
+  const cardHoverEffect = "shadow-md z-10";
+  console.log(backgroundSvg)
+
   return (
     <div
       className={cn(
-        "card-custom-border noise-bg-primary relative m-1 flex h-[390px] w-[290px] flex-col justify-between overflow-hidden p-4 hover:scale-105 hover:shadow-xl mobile:h-[360px] mobile:w-[260px]",
+        `card-custom-border noise-bg-primary relative m-1 flex h-[390px] w-[290px] flex-col justify-between overflow-hidden p-4 mobile:h-[360px] mobile:w-[260px] ${backgroundSvg && cardHoverEffect}`,
         className,
       )}
       onMouseEnter={() => setBackgroundSvgHandler(true)}
@@ -130,14 +133,16 @@ function CardFooter({
 }
 
 function StarsRating({ stars }: { stars: number }): JSX.Element {
+  const iconSize = "mobile:text-[24px] text-[28px]";
+
   function getStarsWithIcons(star: number): JSX.Element[] {
     let stars = [];
     for (let i = 0; i < 5; i++)
       stars.push(
         i < star ? (
-          <MdOutlineStar size={24} />
+          <MdOutlineStar className={iconSize} />
         ) : (
-          <MdOutlineStarBorder size={24} />
+          <MdOutlineStarBorder className={iconSize} />
         ),
       );
     return stars;
@@ -162,12 +167,11 @@ function CardBrandTitle({ title }: { title: string }) {
   );
 }
 function CardGloveTitle({ title }: { title: string }) {
-  const checkTitleSize: string =
-    title.length > 19 ? "text-sm" : "text-base font-bold";
+  const checkTitleSize: string = title.length > 18 ? "text-base" : "text-lg";
 
   return (
     <h3
-      className={`${checkTitleSize} text-center font-knockoutHeavy uppercase leading-none text-secondary mobile:text-sm`}
+      className={`${checkTitleSize} text-center font-knockoutHeavyLight font-bold uppercase leading-none text-secondary mobile:text-sm`}
     >
       {title}
     </h3>
@@ -227,9 +231,7 @@ function Stats({ s }: { s: IGloveStats }): JSX.Element {
       <div>
         {keys.slice(0, 3).map((key, i) => (
           <p key={i}>
-            <span className="mr-1 font-bold text-secondary">
-              {key[1]}
-            </span>{" "}
+            <span className="mr-1 font-bold text-secondary">{key[1]}</span>{" "}
             {key[0]}
           </p>
         ))}
@@ -237,9 +239,7 @@ function Stats({ s }: { s: IGloveStats }): JSX.Element {
       <div>
         {keys.slice(3).map((key, i) => (
           <p key={i}>
-            <span className="mr-1 font-bold  text-secondary">
-              {key[1]}
-            </span>{" "}
+            <span className="mr-1 font-bold text-secondary">{key[1]}</span>{" "}
             {key[0]}
           </p>
         ))}

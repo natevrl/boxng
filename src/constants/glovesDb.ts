@@ -336,7 +336,7 @@ export const glovesData: Gloves = {
     {
       brand: "DECHA",
       title: "DECHA",
-      img: "/images/gloves/feather/decha.jpg",
+      img: "/images/gloves/feather/decha.webp",
       country: { designed: "TH", madeIn: "TH" },
       videoUrl: "",
       buyUrl: "",
@@ -347,7 +347,7 @@ export const glovesData: Gloves = {
     {
       brand: "PLAYERZ",
       title: "Crown",
-      img: "/images/gloves/feather/playerz-crown.jpg",
+      img: "/images/gloves/feather/playerz-crown.webp",
       country: { designed: "GB", madeIn: "PK" },
       videoUrl: "",
       buyUrl: "",
@@ -494,7 +494,7 @@ export const glovesData: Gloves = {
     {
       brand: "HIT N MOVE",
       title: "All Day Balance",
-      img: "/images/gloves/middle/hitnmove-alldaybalance.png",
+      img: "/images/gloves/middle/hitnmove-alldaybalance.webp",
       country: { designed: "US", madeIn: "PK" },
       videoUrl: "",
       buyUrl: "",
@@ -505,7 +505,7 @@ export const glovesData: Gloves = {
     {
       brand: "adidas",
       title: "Adispeed",
-      img: "/images/gloves/middle/adidas-adispeed.jpg",
+      img: "/images/gloves/middle/adidas-adispeed.webp",
       country: { designed: "DE", madeIn: "PK" },
       videoUrl: "",
       buyUrl: "",
@@ -516,7 +516,7 @@ export const glovesData: Gloves = {
     {
       brand: "ADIDAS",
       title: "Speed Tilt 350",
-      img: "/images/gloves/middle/adidas-speedtilt350.jpg",
+      img: "/images/gloves/middle/adidas-speedtilt350.webp",
       country: { designed: "DE", madeIn: "PK" },
       videoUrl: "",
       buyUrl: "",
@@ -527,7 +527,7 @@ export const glovesData: Gloves = {
     {
       brand: "PHENOM",
       title: "SG-210",
-      img: "/images/gloves/middle/phenom-SG-210.jpg",
+      img: "/images/gloves/middle/phenom-SG-210.webp",
       country: { designed: "GB", madeIn: "PK" },
       videoUrl: "",
       buyUrl: "",
@@ -538,7 +538,7 @@ export const glovesData: Gloves = {
     {
       brand: "MESSENGER",
       title: "Pro 3.0 XMT",
-      img: "/images/gloves/middle/messenger-pro3xt.png",
+      img: "/images/gloves/middle/messenger-pro3xt.webp",
       country: { designed: "PK", madeIn: "PK" },
       videoUrl: "",
       buyUrl: "",
@@ -595,7 +595,7 @@ export const glovesData: Gloves = {
     {
       brand: "WINNING",
       title: "MS",
-      img: "/images/gloves/heavy/winning-ms.webp",
+      img: "/images/gloves/heavy/winning-ms2.webp",
       country: { designed: "JP", madeIn: "JP" },
       videoUrl: "",
       buyUrl: "",
