@@ -8,13 +8,10 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    animation: {
-      bounce: "bounce 2s infinite",
-    },
     fontFamily: {
       primary: "var(--font-inter)",
-      knockoutHeavy: ["knockout-heavy", "sans-serif"],
-      knockoutHeavyLight: ["knockout-heavy-light", "sans-serif"],
+      knockoutHeavy: "var(--font-knockout-heavy)",
+      knockoutHeavyLight: "var(--font-knockout-light)",
     },
     extend: {
       fontSize: {
@@ -118,6 +115,7 @@ const config: Config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        'pulse-faster': "pulse 1s infinite",
       },
     },
   },

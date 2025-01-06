@@ -18,26 +18,31 @@ function BeltCard({
   mobileDialogState,
 }: BeltCardProps): JSX.Element {
   const [isInCard, setIsInCard] = useState(false);
+
   function handleIsInCard() {
-    setIsInCard(state => !state);
+    setIsInCard((state) => !state);
   }
 
   return (
     <div
-      className='relative w-[165px] h-[177px]'
+      className="relative h-[177px] w-[165px]"
       onClick={() => {
         funcToGetCategory(title);
         if (mobileDialogState.state) mobileDialogState.toggle();
       }}
       onMouseEnter={handleIsInCard}
-      onMouseLeave={handleIsInCard}>
+      onMouseLeave={handleIsInCard}
+    >
       {isInCard && (
-        <div className='absolute inset-1 z-10 bg-popover opacity-90 cursor-pointer rounded-xl p-4 flex items-center justify-center flex-col text-center text-sm'>
-          <p className='text-xs mb-1'>category</p>
-          <h5 className='font-bold'>{title}</h5>
-          <Separator className='w-full h-px  bg-primary my-4' orientation='horizontal' />
-          <p className='text-xs mb-1'>price (€)</p>
-          <h6 className='font-bold'>{p}</h6>
+        <div className="absolute inset-1 z-10 flex cursor-pointer flex-col items-center justify-center rounded-xl bg-popover p-4 text-center text-sm opacity-90">
+          <p className="mb-1 text-xs">category</p>
+          <h5 className="font-bold">{title}</h5>
+          <Separator
+            className="my-4 h-px w-full bg-primary"
+            orientation="horizontal"
+          />
+          <p className="mb-1 text-xs">price (€)</p>
+          <h6 className="font-bold">{p}</h6>
         </div>
       )}
       <Image
@@ -46,7 +51,7 @@ function BeltCard({
         priority
         loading="eager"
         fill
-        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
     </div>
   );

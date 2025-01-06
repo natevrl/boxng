@@ -57,7 +57,9 @@ function HelperDialogContent(): JSX.Element {
           {statsData.map((stat, i) => {
             return (
               <AccordionItem key={i} value={stat.abbreviation}>
-                <AccordionTrigger className="link-hover-effect">{stat.name } ({stat.abbreviation})</AccordionTrigger>
+                <AccordionTrigger className="link-hover-effect">
+                  {stat.name} ({stat.abbreviation})
+                </AccordionTrigger>
                 <AccordionContent>{stat.details}</AccordionContent>
               </AccordionItem>
             );
@@ -90,7 +92,7 @@ function HelperDialogContent(): JSX.Element {
         key={item.key}
         className="flex flex-col items-center gap-8 text-center"
       >
-        <h2 className="font-bold uppercase mb-4">{item.title}</h2>
+        <h2 className="mb-4 font-bold uppercase">{item.title}</h2>
         {item.content}
         {i !== helperContent.length - 1 && (
           <Separator className="my-8 bg-popover" />

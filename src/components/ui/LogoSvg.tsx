@@ -1,7 +1,7 @@
 import React from "react";
 
 interface LogoSvgProps {
-  className: string;
+  className?: string;
 }
 
 const LogoSvg: React.FC<LogoSvgProps> = ({ className }) => {

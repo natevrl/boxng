@@ -4,7 +4,7 @@ type DialogProps = {
   title: string;
   children: React.ReactNode;
   triggerButton: React.ReactNode;
-  className: string;
+  className?: string;
 };
 
 const Dialog: React.FC<DialogProps> = ({
@@ -41,7 +41,9 @@ const Dialog: React.FC<DialogProps> = ({
   return (
     <>
       {/* Bouton déclencheur */}
-      <div onClick={() => setIsOpen(true)} className="cursor-pointer">{triggerButton}</div>
+      <div onClick={() => setIsOpen(true)} className="cursor-pointer">
+        {triggerButton}
+      </div>
 
       {/* Overlay et Dialog */}
       {isOpen && (
