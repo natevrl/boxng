@@ -20,7 +20,7 @@ function CardSection({ showCategory }: { showCategory: string }): JSX.Element {
           <section className="mr-4 flex flex-wrap gap-4 p-2 tablet:justify-center">
             {sortedList.map((glove, i) => (
               <Card
-                key={i}
+                key={`card-${i}`}
                 brand={glove.brand}
                 title={glove.title}
                 img={glove.img}
@@ -30,6 +30,7 @@ function CardSection({ showCategory }: { showCategory: string }): JSX.Element {
                 stats={glove.stats}
                 videoUrl={glove.videoUrl}
                 buyUrl={glove.buyUrl}
+                classement={i + 1}
               />
             ))}
           </section>

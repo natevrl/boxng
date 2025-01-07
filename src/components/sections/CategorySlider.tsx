@@ -1,24 +1,23 @@
+import { useEffect, useState } from "react";
+
 import BeltCard from "@/components/ui/BeltCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { categoryData } from "@/constants/categoryDb";
 import MobileDialogCategory from "@/components/sections/MobileDialogCategory";
-import { Button } from "@/components/ui/button";
 import HelperDialog from "./HelperDialog";
 
-interface CategorySliderProps {
-  funcToGetCategory: (category: string) => void;
-}
 
-function CategorySlider({
-  funcToGetCategory,
-}: CategorySliderProps): JSX.Element {
+
+function CategorySlider(): JSX.Element {
+
+
   return (
     <>
       <section className="flex items-center gap-4 tablet:justify-center">
         {/* mobile */}
         <div className="flex items-end gap-4 min-tbl:hidden">
-          <MobileDialogCategory funcToGetCategory={funcToGetCategory} />
+          <MobileDialogCategory />
           <HelperDialog />
         </div>
         {/* desktop */}
@@ -28,7 +27,7 @@ function CategorySlider({
             type="always"
             className="w-full whitespace-nowrap rounded-xl"
           >
-            <div className="flex flex-col items-center justify-center gap-6">
+            <div className="flex flex-col items-center justify-center">
               {categoryData.map((item, index) => {
                 return (
                   <BeltCard
@@ -36,8 +35,6 @@ function CategorySlider({
                     title={item.name}
                     p={item.depiction}
                     img={item.img}
-                    funcToGetCategory={funcToGetCategory}
-                    mobileDialogState={{ state: false, toggle: () => {} }}
                   />
                 );
               })}

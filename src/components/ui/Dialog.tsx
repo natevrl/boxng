@@ -1,10 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, use } from "react";
 
 type DialogProps = {
   title: string;
   children: React.ReactNode;
   triggerButton: React.ReactNode;
   className?: string;
+  handleCloseOnCategorySelect?: {state: boolean, func: () => void};
+
 };
 
 const Dialog: React.FC<DialogProps> = ({
@@ -12,6 +14,7 @@ const Dialog: React.FC<DialogProps> = ({
   children,
   triggerButton,
   className = "",
+  handleCloseOnCategorySelect
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -27,6 +30,14 @@ const Dialog: React.FC<DialogProps> = ({
   };
 
   useEffect(() => {
+    if(handleCloseOnCategorySelect?.state) {
+      setIsOpen(false);
+      handleCloseOnCategorySelect.func();
+    }
+  });
+
+  useEffect(() => {
+
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {

@@ -9,7 +9,9 @@ import { cn } from "@/src/constants/utils";
 import { IGlove, IGloveStats } from "@/src/constants/glovesDb";
 import { Button } from "@/components/ui/button";
 
-export default function Card(props: IGlove): JSX.Element {
+export default function Card(
+  props: IGlove & { classement: number },
+): JSX.Element {
   const {
     brand,
     title,
@@ -20,10 +22,15 @@ export default function Card(props: IGlove): JSX.Element {
     buyUrl,
     globalNote,
     stats,
+    classement,
   } = props;
 
   return (
     <CardContent hoverImg={true} url="/images/card-boom-effect.svg">
+      {/* <div className="absolute inset-0 overflow-visible bg-red-400">
+        <div className="medalContainer"></div>
+
+      </div> */}
       <CardHeader>
         <StarsRating stars={stars} />
         <div>
@@ -61,7 +68,6 @@ function CardContent({
   }, []);
 
   const cardHoverEffect = "shadow-md z-10";
-  console.log(backgroundSvg)
 
   return (
     <div
