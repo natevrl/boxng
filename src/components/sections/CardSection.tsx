@@ -1,18 +1,12 @@
 import Card from "@/components/ui/Card";
 import { glovesData, IGlove } from "@/constants/glovesDb";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Suspense, useEffect, useState } from "react";
-import Loader from "../ui/Loader";
-import dynamic from "next/dynamic";
-
-const LazyCard = dynamic(() => import("../ui/Card"), {
-  loading: () => <Loader />,
-  ssr: false,
-});
 
 function CardSection({ showCategory }: { showCategory: string }): JSX.Element {
   const categoryItems: IGlove[] = glovesData[showCategory];
   const sortedList = categoryItems.sort((a, b) => b.globalNote - a.globalNote);
+
+
 
   return (
       <ScrollArea type="always">
