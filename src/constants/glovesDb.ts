@@ -36,263 +36,6 @@ interface Gloves {
   [key: string]: any;
 }
 
-/*
-FEATHER :
-94.6
-PLAYERZ 
-Spartech
-GB PK
-94 STYL 94 SPAR
-94 COMF 93 BAG
-94 DURA
-99 V4M
-2
-
-
-93.6
-UNIFIED BOXING 
-NXT LVL
-GB PK
-93 STYL
-93 SPAR
-93 COMF
-93 BAG
-93 DURA
-97 V4M
-0
-
-
-92.8
-DECHA
-TH TH
-92 STYL
-92 SPAR
-92 COMF
-92 BAG
-93 DURA
-96 V4M
-0
-
-
-92.8
-PLAYERZ 
-Crown
-GB PK
-92 STYL 92 SPAR
-92 COMF
-93 BAG
-92 DURA
-96 V4M
-0
-
-
-92.6
-UNIFIED BOXING
-PRO STANDARD ELITE
-GB PK
-92 STYL
-92 SPAR
-92 COMF
-92 BAG
-92 DURA
-96 V4M
-0
-
- */
-
-/*
-WELTER
-
-96.0
-DEUS Sparta
-GB PK
-94 STYL 96 SPAR
-96 COMF 95 BAG
-96 DURA
-99 V4M
-4
-
-
-95.5
-MESSENGER
-Elite Edition XXQ 
-PK PK
-93 STYL 95 SPAR
-95 COMF 95 BAG
-96 DURA
-99 V4M
-3
-
-
-95.5
-HOTLINE
-JP PK
-94 STYL 95 SPAR
-95 COMF 95 BAG
-96 DURA 98 V4M
-3
-
-
-95.3
-BRAVOSE 
-Titan Grip
-GB PK
-95 STYL
-94 SPAR
-95 COMF
-94 BAG
-95 DURA
-99 V4M
-3
-
-
-
-95.1
-PLAYERZ 
-Raider
-GB PK
-96 STYL 94 SPAR
-95 COMF 95 BAG
-95 DURA 96 V4M TOTAL 571
-3
-
-
-
-
-
-
-94.6
-GEEZERS 
-Halo
-GB PK
-94 STYL
-94 SPAR
-95 COMF
-95 BAG
-95 DURA
-95 V4M
-2
-
-
-
-94.1
-PRO-AM
-Retro
-GB PK
-93 STYL 94 SPAR
-94 COMF
-94 BAG
-94 DURA
-96 V4M
-1
-
-
-94.0
-EVERLAST
-Powerlock 2 Leather
-US IN
-94 STYL
-93 SPAR
-94 COMF 94 BAG
-94 DURA
-95 V4M
-0
-
-
-
-
-93.8
-INFINITUDE
--
-CA PK
-94 STYL
-94 SPAR
-93 COMF
-93 BAG
-92 DURA
-97 V4M
-0
-
-
-
-93.8
-TITAN 
-Velocity
-GB PK
-93 STYL
-94 SPAR
-93 COMF
-93 BAG
-95 DURA
-95 V4M
-0
-
-heavy:
-
-
-96.8
-FLY Superlace Lightning
-GB GB
-98 STYL 98 SPAR
-98 COMF
-96 BAG
-96 DURA
-95 V4M
-5
-
-
-
-96.6
-FLY
-Superlace
-GB GB
-96 STYL
-98 SPAR
-98 COMF
-96 BAG
-97 DURA
-95 V4M
-5
-
-
-
-96.6
-HIT N MOVE
-Balance
-US PK
-95 STYL
-97 SPAR
-97 COMF
-97 BAG
-96 DURA
-98 V4M
-5
-
-
-
-96.5
-WINNING MS
-JP JP
-94 STYL 97 SPAR
-97 COMF
-97 BAG
-98 DURA
-96 V4M
-5
-
-
-
-96.0
-ROCKKICK
-FR FR
-97 STYL
-96 SPAR
-96 COMF 96 BAG
-96 DURA
-95 V4M
-4
-
-*/
 
 // -- TEMPLATE --
 /*
@@ -595,7 +338,7 @@ export const glovesData: Gloves = {
     {
       brand: "WINNING",
       title: "MS",
-      img: "/images/gloves/heavy/winning-ms2.webp",
+      img: "/images/gloves/heavy/winning-ms.webp",
       country: { designed: "JP", madeIn: "JP" },
       videoUrl: "",
       buyUrl: "",
@@ -603,19 +346,130 @@ export const glovesData: Gloves = {
       globalNote: 96.5,
       stats: { STYL: 94, COMF: 97, DURA: 98, SPAR: 97, BAG: 97, V4M: 96 },
     },
+    {
+      brand: "FLY",
+      title: "Superlace 2",
+      img: "/images/gloves/heavy/fly-superlace2.webp",
+      country: { designed: "GB", madeIn: "GB" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 5,
+      globalNote: 97.3,
+      stats: { STYL: 96, COMF: 99, DURA: 97, SPAR: 99, BAG: 97, V4M: 96 },
+    },
+    {
+      brand: "RIVAL",
+      title: "RFX P4P",
+      img: "/images/gloves/heavy/rival-rfxp4p.webp",
+      country: { designed: "CA", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 4,
+      globalNote: 95.8,
+      stats: { STYL: 98, COMF: 96, DURA: 96, SPAR: 97, BAG: 94, V4M: 94 },
+    },
+    {
+      brand: "BAYONETA",
+      title: "Premium HH",
+      img: "/images/gloves/heavy/bayoneta-premiumhh.webp",
+      country: { designed: "MX", madeIn: "MX" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 4,
+      globalNote: 95.8,
+      stats: { STYL: 95, COMF: 96, DURA: 96, SPAR: 96, BAG: 97, V4M: 95 },
+    },
+    {
+      brand: "BRYANT BOXING",
+      title: "Electric Shock 2.0",
+      img: "/images/gloves/heavy/bryantboxing-electricshock2.webp",
+      country: { designed: "US", madeIn: "MX" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 4,
+      globalNote: 95.6,
+      stats: { STYL: 97, COMF: 95, DURA: 97, SPAR: 94, BAG: 95, V4M: 96 },
+    },
+    {
+      brand: "CLETO REYES",
+      title: "Custom",
+      img: "/images/gloves/heavy/cletoreyes-custom.webp",
+      country: { designed: "MX", madeIn: "MX" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 3,
+      globalNote: 95.5,
+      stats: { STYL: 97, COMF: 94, DURA: 96, SPAR: 93, BAG: 96, V4M: 97 },
+    },
   ],
-  superheavy: [],
+  superheavy: [
+    {
+      brand: "WINNING",
+      title: "Custom",
+      img: "/images/gloves/superheavy/winning-custom.webp",
+      country: { designed: "JP", madeIn: "JP" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 5,
+      globalNote: 96.3,
+      stats: { STYL: 95, COMF: 97, DURA: 98, SPAR: 97, BAG: 97, V4M: 94 },
+    },
+    {
+      brand: "WINNING",
+      title: "SPECIAL LOGO",
+      img: "/images/gloves/superheavy/winning-speciallogo.webp",
+      country: { designed: "JP", madeIn: "JP" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 5,
+      globalNote: 96.1,
+      stats: { STYL: 94, COMF: 97, DURA: 98, SPAR: 97, BAG: 97, V4M: 94 },
+    },
+    {
+      brand: "TFM",
+      title: "RL5",
+      img: "/images/gloves/superheavy/tfm-rl5.webp",
+      country: { designed: "CN", madeIn: "CN" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 5,
+      globalNote: 96.1,
+      stats: { STYL: 97, COMF: 97, DURA: 97, SPAR: 96, BAG: 96, V4M: 94 },
+    },
+    {
+      brand: "BARRIC",
+      title: "BOXING",
+      img: "/images/gloves/superheavy/barric-boxing.webp",
+      country: { designed: "US", madeIn: "MX" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 4,
+      globalNote: 95.6,
+      stats: { STYL: 95, COMF: 96, DURA: 97, SPAR: 95, BAG: 96, V4M: 95 },
+    },
+  ],
   luxury: [
     {
       brand: "DI NARDO",
       title: "The Eminence Range ",
-      img: "/images/",
+      img: "/images/gloves/luxury/dinardo-theeminencerange.webp",
       country: { designed: "IT", madeIn: "IT" },
       videoUrl: "",
       buyUrl: "",
       stars: 5,
       globalNote: 96.1,
       stats: { STYL: 97, COMF: 97, DURA: 97, SPAR: 96, BAG: 98, V4M: 92 },
+    },
+    {
+      brand: "GRANT",
+      title: "Custom",
+      img: "/images/gloves/luxury/grant-custom.webp",
+      country: { designed: "US", madeIn: "MX" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 2,
+      globalNote: 94.8,
+      stats: { STYL: 98, COMF: 94, DURA: 95, SPAR: 95, BAG: 95, V4M: 92 },
     },
   ],
 };
