@@ -41,8 +41,8 @@ Follow these steps to get the project up and running on your local machine.
 ### Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/boxng.git
-   cd boxng
+   git clone https://github.com/yourusername/boxing-reviews-app.git
+   cd boxing-reviews-app
    ```
 
 ### Running the Project
