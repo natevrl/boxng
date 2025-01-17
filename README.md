@@ -1,4 +1,4 @@
-# ✨ Boxng, Boxing Gear Reviews Platform ✨
+<h1 align="center">✨ Boxng, Boxing Gear Reviews Platform ✨</h1>
 
 **Boxng** is an innovative web application designed to provide detailed evaluations and reviews of a wide range of boxing gloves. This platform allows users to discover and compare different boxing gloves based on specific criteria, offering a rich and informative user experience.
 
