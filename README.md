@@ -1,4 +1,4 @@
-<h1 align="center">✨ Boxng, Boxing Gear Reviews Platform ✨</h1>
+<h1 align="center">🥊 Boxng: Ultimate Boxing Gear Guide 🥊</h1>
 
 ![Readme Image](/public/readme-image.png)
 
