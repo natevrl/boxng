@@ -1,4 +1,4 @@
-<h1 align="center">✨ Boxng, Boxing Gear Reviews Platform ✨</h1>
+<h1 align="center">🥊 Boxng: Ultimate Boxing Gear Guide 🥊</h1>
 
 ![Readme Image](/public/readme-image.png)
 
@@ -12,8 +12,7 @@
 - Figma
 
 ## 🔋 Features
-- 👉 **Extensive Database**: Access a vast collection of boxing gloves with detailed information, including brand, model, country of design and manufacture, global ratings, and specific stats such as style, comfort, durability, sparring, bag work, and value for money.
-- 👉 **Admin Dashboard**: Secure interface for administrators to add, update, and delete glove entries without modifying the code.
+
 - 👉 **Dynamic Content Display**: Utilizes static data storage for fast access and efficient performance.
 - 👉 **Responsive Design**: Ensures an optimal viewing experience across all devices, from desktops to mobile phones.
 - 👉 **Server Components**: Efficiently manage server-side rendering and data fetching.
@@ -21,24 +20,29 @@
 - 👉 **Error Handling**: Custom error pages including `loading.tsx`, `error.tsx`, and `not-found.tsx`.
 - 👉 **Data Fetching and Caching**: Implement data fetching strategies with caching and revalidation for optimal performance.
 - 👉 **Client & Server Components**: Seamless integration of client and server components for a smooth user experience.
+- 👉 **Sorting Algorithm**: An algorithm to manage the ranking of boxing gear based on various criteria.
+- 👉 **Category Filtering**: A system to filter boxing gear by category for easier navigation and discovery.
 - 👉 **Dynamic & Static Routes**: Support for both dynamic and static routing to enhance navigation.
 - 👉 **Styling with Tailwind & Shadcn**: Modern and responsive design using Tailwind CSS and Shadcn.
 - 👉 **Authentication & Authorization**: Secure user authentication and authorization mechanisms.
 - 👉 **File Uploads**: Support for file uploads using UploadThing.
 - 👉 **Database Integration**: Integration with Prisma for efficient database management.
 - 👉 **Optimistic Updates**: Implement optimistic UI updates for a better user experience.
+- 👉 **Extensive Database**: Access a vast collection of boxing gloves with detailed information, including brand, model, country of design and manufacture, global ratings, and specific stats such as style, comfort, durability, sparring, bag work, and value for money.
+- 👉 **Admin Dashboard**: Secure interface for administrators to add, update, and delete glove entries without modifying the code.
+
 
 ## 🤸 Quick Start
 Follow these steps to get the project up and running on your local machine.
 
 ### Prerequisites
-- Node.js and npm installed
+- Git, Node.js and npm installed
 
 ### Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/boxng.git
-   cd boxng
+   git clone https://github.com/natevrl/boxing-reviews-app.git
+   cd boxing-reviews-app
    ```
 
 ### Running the Project
