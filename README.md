@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Boxng, Gloves Review Platform
 
-## Getting Started
+## Description
+**Gloves Review Platform** is an innovative web application designed to provide detailed evaluations and reviews of a wide range of boxing gloves. This platform allows users to discover and compare different boxing gloves based on specific criteria, offering a rich and informative user experience. With features like an extensive database of gloves, a secure admin dashboard for data management, and dynamic content display, Gloves Review Platform ensures that boxing enthusiasts can make informed decisions with ease.
 
-First, run the development server:
+## Tech Stack
+- **Frontend**:
+  - Next.js
+  - React
+  - Tailwind CSS
+  - TypeScript
+  - Figma
+
+## Features
+- **Extensive Database**: Access a vast collection of boxing gloves with detailed information, including brand, model, country of design and manufacture, global ratings, and specific stats such as style, comfort, durability, sparring, bag work, and value for money.
+- **Admin Dashboard**: Secure interface for administrators to add, update, and delete glove entries without modifying the code.
+- **Dynamic Content Display**: Utilizes static data storage for fast access and efficient performance.
+- **Responsive Design**: Ensures an optimal viewing experience across all devices, from desktops to mobile phones.
+- **Server Components**: Efficiently manage server-side rendering and data fetching.
+- **Layouts and Route Handlers**: Structured layouts and custom route handlers for better navigation and API integration.
+- **Error Handling**: Custom error pages including `loading.tsx`, `error.tsx`, and `not-found.tsx`.
+- **Data Fetching and Caching**: Implement data fetching strategies with caching and revalidation for optimal performance.
+- **Client & Server Components**: Seamless integration of client and server components for a smooth user experience.
+- **Dynamic & Static Routes**: Support for both dynamic and static routing to enhance navigation.
+- **Styling with Tailwind & Shadcn**: Modern and responsive design using Tailwind CSS and Shadcn.
+- **Authentication & Authorization**: Secure user authentication and authorization mechanisms.
+- **File Uploads**: Support for file uploads using UploadThing.
+- **Database Integration**: Integration with Prisma for efficient database management.
+- **Optimistic Updates**: Implement optimistic UI updates for a better user experience.
+
+## Quick Start
+Follow these steps to get the project up and running on your local machine.
+
+### Prerequisites
+- Node.js and npm installed
+
+### Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/boxng.git
+   cd boxng
+   ```
+
+
+### Running the Project
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
