@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   *,
   *::after,
@@ -115,6 +114,10 @@
     width: 100%;
   }
 
+  .card-url-btn {
+    @apply flex items-center justify-center p-[10px] font-bold text-background;
+  }
+
   /* .btn-hover-effect {
     display: inline-block;
     position: relative;
@@ -191,12 +194,28 @@
     background-blend-mode: multiply;
   }
 
-  .medalContainer::before {
-    content: url('/images/silver-medal.svg');
+  .goldMedal::before {
+    content: url("/images/gold-medal.svg");
     position: absolute;
-    top: -20px;
+    top: -25px;
     left: 0px;
-    z-index: 999;
+    z-index: 10;
+  }
+
+  .silverMedal::before {
+    content: url("/images/silver-medal.svg");
+    position: absolute;
+    top: -25px;
+    left: 0px;
+    z-index: 10;
+  }
+
+  .bronzeMedal::before {
+    content: url("/images/bronze-medal.svg");
+    position: absolute;
+    top: -25px;
+    left: 0px;
+    z-index: 10;
   }
 
   .selected-category-bg {

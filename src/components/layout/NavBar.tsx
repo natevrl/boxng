@@ -42,7 +42,7 @@ function MobileNav(): JSX.Element {
   return (
     <>
       <div
-        className={`relative z-50 cursor-pointer min-tbl:hidden ${iconColor}`}
+        className={`relative z-30 cursor-pointer min-tbl:hidden ${iconColor}`}
         onClick={() => setModalIsOpen((curr) => !curr)}
       >
         {modalIsOpen ? <IoClose size={32} /> : <IoMenu size={32} />}

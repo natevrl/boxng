@@ -6,12 +6,22 @@ import { IoLogoYoutube, IoLogoEuro } from "react-icons/io";
 import ReactCountryFlag from "react-country-flag";
 
 import { cn } from "@/src/constants/utils";
-import { IGlove, IGloveStats } from "@/src/constants/glovesDb";
-import { Button } from "@/components/ui/button";
 
-export default function Card(
-  props: IGlove & { classement: number },
-): JSX.Element {
+interface ICardProps {
+  brand: string;
+  title: string;
+  img: string;
+  stars: number;
+  country?: Object;
+  videoUrl: string;
+  buyUrl: string;
+  globalNote: number;
+  stats: Object;
+  classement: number;
+  isGloves?: boolean;
+}
+
+export default function Card(props: ICardProps): JSX.Element {
   const {
     brand,
     title,
@@ -23,14 +33,40 @@ export default function Card(
     globalNote,
     stats,
     classement,
+    isGloves = false,
   } = props;
 
-  return (
-    <CardContent hoverImg={true} url="/images/card-boom-effect.svg">
-      {/* <div className="absolute inset-0 overflow-visible bg-red-400">
-        <div className="medalContainer"></div>
+  const [backgroundSvg, setBackgroundSvg] = useState(false);
+  const setBackgroundSvgHandler = useCallback((value: boolean) => {
+    setBackgroundSvg(value);
+  }, []);
 
-      </div> */}
+  const getMedals = () => {
+    if (classement === 1) return "goldMedal";
+    if (classement === 2) return "silverMedal";
+    if (classement === 3) return "bronzeMedal";
+  };
+
+  return (
+    <CardContent>
+      {/* boom effect on card's hovering */}
+      <div className="absolute inset-0 overflow-hidden rounded-[26px]">
+        {backgroundSvg && (
+          <Image
+            priority
+            loading="eager"
+            src={"/images/card-boom-effect.svg"}
+            alt="image for card's hover effect"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className={`absolute -z-10 object-cover object-center tablet:hidden`}
+          />
+        )}
+      </div>
+
+      <div className="absolute inset-0">
+        <div className={getMedals()}></div>
+      </div>
       <CardHeader>
         <StarsRating stars={stars} />
         <div>
@@ -39,9 +75,18 @@ export default function Card(
         </div>
       </CardHeader>
       <CardBody>
-        <CardUrlButtons />
-        <CardMainImage url={img} alt={title} />
-        <CardCountryIcons obj={country} />
+        <CardUrlButtons urls={[videoUrl, buyUrl]} />
+        {/* Card's Main Image */}
+        <CardMainImage
+          url={img}
+          alt={title}
+          backgroundSvg={backgroundSvg}
+          hoverUrl="/images/card-boom-effect.svg"
+          onMouseEnter={() => setBackgroundSvgHandler(true)}
+          onMouseLeave={() => setBackgroundSvgHandler(false)}
+        />
+
+        {isGloves && <CardCountryIcons obj={country} />}
       </CardBody>
       <CardFooter>
         <Stats s={stats} />
@@ -54,42 +99,17 @@ export default function Card(
 function CardContent({
   children,
   className,
-  hoverImg = false,
-  url,
 }: {
   children: ReactNode;
   className?: string;
-  hoverImg: boolean;
-  url: string;
 }) {
-  const [backgroundSvg, setBackgroundSvg] = useState(false);
-  const setBackgroundSvgHandler = useCallback((value: boolean) => {
-    setBackgroundSvg(value);
-  }, []);
-
-  const cardHoverEffect = "shadow-md z-10";
-  
   return (
     <div
       className={cn(
-        `card-custom-border noise-bg-primary relative m-1 flex h-[390px] w-[290px] flex-col justify-between overflow-hidden p-4 mobile:h-[360px] mobile:w-[260px] ${backgroundSvg && cardHoverEffect}`,
+        "card-custom-border noise-bg-primary relative m-1 flex h-[390px] w-[290px] flex-col justify-between p-4 hover:scale-[.99] hover:shadow-xl mobile:h-[360px] mobile:w-[260px]",
         className,
       )}
-      onMouseEnter={() => setBackgroundSvgHandler(true)}
-      onMouseLeave={() => setBackgroundSvgHandler(false)}
     >
-      {/* boom effect on card's hovering */}
-      {hoverImg && backgroundSvg && (
-        <Image
-          priority
-          loading="eager"
-          src={url}
-          alt="image for card's hover effect"
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className={`absolute -z-10 object-cover object-center tablet:hidden`}
-        />
-      )}
       {children}
     </div>
   );
@@ -184,26 +204,51 @@ function CardGloveTitle({ title }: { title: string }) {
   );
 }
 
-function CardUrlButtons() {
+function CardUrlButtons({ urls }: { urls: string[] }) {
   return (
     <div className="flex max-w-10 flex-col gap-1">
-      <Button variant="secondary" className="rounded-t-full py-5">
+      <button
+        className={`card-url-btn rounded-t-full ${urls[0] ? "bg-secondary" : "cursor-auto bg-secondary/50"}`}
+      >
         <IoLogoYoutube className="icon-size" />
-      </Button>
-      <Button className="rounded-b-full bg-accent hover:bg-accent/80">
+      </button>
+      <button
+        className={`card-url-btn rounded-b-full ${urls[1] ? "bg-accent hover:bg-accent/80" : "cursor-auto bg-accent/50"}`}
+      >
         <IoLogoEuro className="icon-size" />
-      </Button>
+      </button>
     </div>
   );
 }
 
-function CardMainImage({ url, alt }: { url: string; alt: string }) {
+interface CardMainImageProps {
+  url: string;
+  alt: string;
+  backgroundSvg: boolean;
+  hoverUrl: string;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+}
+
+function CardMainImage({
+  url,
+  alt,
+  backgroundSvg,
+  hoverUrl,
+  onMouseEnter,
+  onMouseLeave,
+}: CardMainImageProps) {
   return (
-    <div className="card-shadow relative h-[160px] w-[150px] border-primary mobile:h-[140px] mobile:w-[130px]">
+    <div
+      className={`card-shadow relative h-[160px] w-[150px] border-primary mobile:h-[140px] mobile:w-[130px]`}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <Image
         src={url}
         alt={alt}
         loading="eager"
+        priority
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         className="object-cover object-center"
@@ -212,25 +257,26 @@ function CardMainImage({ url, alt }: { url: string; alt: string }) {
   );
 }
 
-function CardCountryIcons({ obj }: { obj: Object }) {
+function CardCountryIcons({ obj }: { obj?: Object }) {
   return (
     <div className="flex flex-col gap-2">
-      {Object.entries(obj).map((item, i) => {
-        return (
-          <ReactCountryFlag
-            key={i}
-            svg
-            title={item[1]}
-            countryCode={item[1]}
-            className="flag-size"
-          />
-        );
-      })}
+      {obj &&
+        Object.entries(obj).map((item, i) => {
+          return (
+            <ReactCountryFlag
+              key={i}
+              svg
+              title={item[1]}
+              countryCode={item[1]}
+              className="flag-size"
+            />
+          );
+        })}
     </div>
   );
 }
 
-function Stats({ s }: { s: IGloveStats }): JSX.Element {
+function Stats({ s }: { s: Object }): JSX.Element {
   const keys = Object.entries(s);
   return (
     <div className="mx-4 flex items-center justify-around font-knockoutHeavyLight text-sm leading-snug tracking-normal mobile:text-xs">

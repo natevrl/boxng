@@ -35,6 +35,7 @@ function CategorySlider(): JSX.Element {
                     title={item.name}
                     p={item.depiction}
                     img={item.img}
+                    isPriority={index === 0}
                   />
                 );
               })}

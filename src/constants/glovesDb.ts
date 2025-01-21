@@ -1,4 +1,3 @@
-import { PiKanban } from "react-icons/pi";
 
 export interface IGloveStats {
   STYL: number;

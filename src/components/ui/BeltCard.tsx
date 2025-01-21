@@ -8,6 +8,7 @@ interface BeltCardProps {
   p: string;
   img: string;
   funcToCloseDialog?: () => void;
+  isPriority?: boolean;
 }
 
 function BeltCard({
@@ -15,6 +16,7 @@ function BeltCard({
   p,
   img,
   funcToCloseDialog,
+  isPriority=false,
 }: BeltCardProps): JSX.Element {
   const [isInCard, setIsInCard] = useState(false);
   const category = useStore();
@@ -42,9 +44,8 @@ function BeltCard({
         <Image
           src={img}
           alt={title}
-          priority
-          loading="eager"
           fill
+          priority={isPriority}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-contain"
         />
