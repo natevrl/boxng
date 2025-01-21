@@ -1,4 +1,3 @@
-
 export interface IGloveStats {
   STYL: number;
   COMF: number;
@@ -35,7 +34,6 @@ interface Gloves {
   [key: string]: any;
 }
 
-
 // -- TEMPLATE --
 /*
 {
@@ -49,6 +47,135 @@ interface Gloves {
   globalNote: 97,
   stats: { STYL: 94, COMF: 97, DURA: 98, SPAR: 97, BAG: 98, V4M: 98 },
 }, 
+
+
+
+
+95.8
+ARES 
+Speciale
+96 STYL
+96 SPAR
+96 COMF 95 BAG
+95 DURA
+97 V4M
+GB PK
+4
+
+
+
+95.8
+NEW SPORTING
+96 STYL 95 SPAR
+95 COMF 96 BAG
+96 DURA
+97 V4M
+MX MX
+4
+
+
+
+95.6
+BOXEO TM 
+Custom
+95 STYL
+95 SPAR
+95 COMF
+96 BAG
+96 DURA
+97 V4M
+MX MX
+4
+
+
+
+95.8
+FLY 
+Superlace X
+95 STYL
+96 SPAR
+96 COMF
+95 BAG
+96 DURA
+97 V4M
+GB CH
+4
+
+
+
+95.8
+HIT N MOVE 
+Agility
+94 STYL
+96 SPAR
+96 COMF
+95 BAG
+96 DURA
+98 V4M
+US PK
+4
+
+
+95.8
+PHENOM 
+SG-202
+95 STYL 96 SPAR
+95 COMF
+95 BAG
+96 DURA
+98 V4M
+GB PK
+4
+
+
+96.0
+ADIDAS 
+Adispeed Metallic
+97 STYL
+97 SPAR
+97 COMF
+94 BAG
+94 DURA
+97 V4M
+GM PK
+4
+
+
+96.0
+NEW SPORTING 
+HH
+96 STYL 96 SPAR
+96 COMF 96 BAG
+96 DURA
+96 V4M
+MX MX
+4
+
+
+96.0
+WALLS FIGHT GEAR
+97 STYL 94 SPAR
+94 COMF 96 BAG
+97 DURA
+98 V4M
+PR IT
+4
+
+
+
+
+95.8
+GUARDED COMBAT
+Calibre Pro 2.0
+97 STYL
+95 SPAR
+95 COMF
+95 BAG
+95 DURA
+98 V4M
+NZ PK
+4
+
 */
 
 export const glovesData: Gloves = {
@@ -287,6 +414,105 @@ export const glovesData: Gloves = {
       stars: 5,
       globalNote: 96.3,
       stats: { STYL: 95, COMF: 96, DURA: 97, SPAR: 96, BAG: 95, V4M: 99 },
+    },
+    {
+      brand: "ARES",
+      title: "Speciale",
+      img: "/images/gloves/middle/ares-speciale.webp",
+      country: { designed: "GB", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 4,
+      globalNote: 95.8,
+      stats: { STYL: 96, COMF: 95, DURA: 95, SPAR: 96, BAG: 95, V4M: 97 },
+    },
+    {
+      brand: "NEW SPORTING",
+      title: "Custom",
+      img: "/images/gloves/middle/newsporting-custom.webp",
+      country: { designed: "MX", madeIn: "MX" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 4,
+      globalNote: 95.8,
+      stats: { STYL: 96, COMF: 95, DURA: 96, SPAR: 95, BAG: 96, V4M: 97 },
+    },
+    {
+      brand: "BOXEO TM",
+      title: "Custom",
+      img: "/images/gloves/middle/boxeotm-custom.webp",
+      country: { designed: "MX", madeIn: "MX" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 4,
+      globalNote: 95.6,
+      stats: { STYL: 95, COMF: 95, DURA: 96, SPAR: 95, BAG: 96, V4M: 97 },
+    },
+    {
+      brand: "FLY",
+      title: "Superlace X",
+      img: "/images/gloves/middle/fly-superlacex.webp",
+      country: { designed: "GB", madeIn: "CH" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 4,
+      globalNote: 95.8,
+      stats: { STYL: 95, COMF: 96, DURA: 96, SPAR: 96, BAG: 95, V4M: 97 },
+    },
+    {
+      brand: "HIT N MOVE",
+      title: "Agility",
+      img: "/images/gloves/middle/hitnmove-agility.webp",
+      country: { designed: "US", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 4,
+      globalNote: 95.8,
+      stats: { STYL: 94, COMF: 96, DURA: 96, SPAR: 96, BAG: 95, V4M: 98 },
+    },
+    {
+      brand: "PHENOM",
+      title: "SG-202",
+      img: "/images/gloves/middle/phenom-sg202.webp",
+      country: { designed: "GB", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 4,
+      globalNote: 95.8,
+      stats: { STYL: 95, COMF: 95, DURA: 96, SPAR: 96, BAG: 95, V4M: 98 },
+    },
+    {
+      brand: "ADIDAS",
+      title: "Adispeed Metallic",
+      img: "/images/gloves/middle/adidas-adispeedmetallic.webp",
+      country: { designed: "GM", madeIn: "PK" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 4,
+      globalNote: 96.0,
+      stats: { STYL: 97, COMF: 97, DURA: 94, SPAR: 97, BAG: 94, V4M: 97 },
+    },
+    {
+      brand: "NEW SPORTING",
+      title: "HH",
+      img: "/images/gloves/middle/newsporting-hh.webp",
+      country: { designed: "MX", madeIn: "MX" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 4,
+      globalNote: 96.0,
+      stats: { STYL: 96, COMF: 96, DURA: 96, SPAR: 96, BAG: 96, V4M: 96 },
+    },
+    {
+      brand: "WALLS FIGHT GEAR",
+      title: "Custom",
+      img: "/images/gloves/middle/wallsfightgear-custom.webp",
+      country: { designed: "PR", madeIn: "IT" },
+      videoUrl: "",
+      buyUrl: "",
+      stars: 4,
+      globalNote: 96.0,
+      stats: { STYL: 97, COMF: 94, DURA: 97, SPAR: 94, BAG: 96, V4M: 98 },
     },
   ],
   heavy: [

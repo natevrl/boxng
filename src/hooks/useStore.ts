@@ -6,7 +6,7 @@ interface Store {
 }
 
 export const useStore= create<Store>((set) => ({
-  selectedCategory: "feather",
+  selectedCategory: "welter",
   updateCategory: (newCategory: string) =>
     set({ selectedCategory: newCategory }),
 }));
