@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { GiBoxingGlove, GiConverseShoe } from "react-icons/gi";
 import { MdOutlineStar } from "react-icons/md";
@@ -28,7 +29,7 @@ function MainCharImg(): JSX.Element {
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         className="object-cover"
       />
-      <div className="absolute w-1/2 h-1/2 right-0 top-0 -z-10 desktop:hidden">
+      <div className="absolute right-0 top-0 -z-10 h-1/2 w-1/2 desktop:hidden">
         <Image
           src="/images/hero/little-char.svg"
           alt="hero image"
@@ -41,7 +42,6 @@ function MainCharImg(): JSX.Element {
     </div>
   );
 }
-
 
 function HeroBackground(): JSX.Element {
   return (
@@ -84,7 +84,7 @@ function Hero(): JSX.Element {
               <h2 className="center-absolute overflow-hidden whitespace-nowrap font-knockoutHeavy text-4xl uppercase mobile:!text-xl tablet:text-2xl">
                 welcome to
               </h2>
-              <h1 className="text-clamp font-knockoutHeavy uppercase leading-[0.7] tracking-wider text-secondary">
+              <h1 className="font-knockoutHeavy text-clamp uppercase leading-[0.7] tracking-wider text-secondary">
                 BOXNG
               </h1>
             </div>
@@ -93,12 +93,18 @@ function Hero(): JSX.Element {
               "Discover top-rated boxing equipment"
             </h2>
             <div className="mt-2 flex gap-5">
-              <button className="icon-shadow rounded-full bg-background p-2 text-secondary">
+              <Link
+                href="/gloves"
+                className="icon-shadow rounded-full bg-background p-2 text-secondary"
+              >
                 <GiBoxingGlove size={48} className="svg-icon" />
-              </button>
-              <button className="icon-shadow rounded-full bg-background p-2 text-secondary">
+              </Link>
+              <Link
+                href="/shoes"
+                className="icon-shadow rounded-full bg-background p-2 text-secondary"
+              >
                 <GiConverseShoe size={48} className="svg-icon" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>

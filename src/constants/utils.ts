@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const navData = ["gloves", "shoes", "about"];
+export const navData = ["gloves", "shoes"];
 
 export const socials = {
   yt: "https://www.youtube.com/@Fit2Box",

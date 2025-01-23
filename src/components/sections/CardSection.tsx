@@ -1,14 +1,20 @@
 import Card from "@/components/ui/Card";
 import { glovesData, IGlove } from "@/constants/glovesDb";
-import { shoesData, IShoe } from "@/src/constants/shoesDb";
+import { shoesData } from "@/src/constants/shoesDb";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-function CardSection({ showCategory, isGloves=false }: { showCategory?: string, isGloves?: boolean }): JSX.Element {
-
+function CardSection({
+  showCategory,
+  isGloves = false,
+}: {
+  showCategory?: string;
+  isGloves?: boolean;
+}): JSX.Element {
   return (
-  <ScrollArea type="always">
-    {isGloves ? <GlovesDeck category={showCategory} /> : <ShoesDeck  />}
-  </ScrollArea>);
+    <ScrollArea type="always">
+      {isGloves ? <GlovesDeck category={showCategory} /> : <ShoesDeck />}
+    </ScrollArea>
+  );
 }
 
 function GlovesDeck({ category }: { category?: string }): JSX.Element {
@@ -18,9 +24,10 @@ function GlovesDeck({ category }: { category?: string }): JSX.Element {
   return (
     <>
       {category ? (
-        <section className="mr-4 mt-4 flex flex-wrap gap-6 p-2 tablet:justify-center">
+        <section className="mr-4 mt-4 flex flex-wrap justify-center gap-6 p-2 tablet:justify-center">
           {sortedList.map((glove, i) => (
             <Card
+              isGloves
               key={`card-${i}`}
               brand={glove.brand}
               title={glove.title}
@@ -42,13 +49,12 @@ function GlovesDeck({ category }: { category?: string }): JSX.Element {
   );
 }
 
-
 function ShoesDeck(): JSX.Element {
   const sortedList = shoesData.sort((a, b) => b.globalNote - a.globalNote);
 
   return (
     <>
-      <section className="m-8 flex flex-wrap gap-6 p-2 tablet:justify-center">
+      <section className="flex flex-wrap justify-center gap-6 p-2 mobile:my-4 tablet:justify-center min-mbl:m-8">
         {sortedList.map((shoe, i) => (
           <Card
             key={`card-${i}`}

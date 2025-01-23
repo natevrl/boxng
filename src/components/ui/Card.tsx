@@ -207,16 +207,24 @@ function CardGloveTitle({ title }: { title: string }) {
 function CardUrlButtons({ urls }: { urls: string[] }) {
   return (
     <div className="flex max-w-10 flex-col gap-1">
-      <button
-        className={`card-url-btn rounded-t-full ${urls[0] ? "bg-secondary" : "cursor-auto bg-secondary/50"}`}
+      <a
+        className={`card-url-btn tooltip relative rounded-t-full ${urls[0] ? "cursor-pointer bg-secondary hover:bg-secondary/80" : "cursor-default bg-secondary/50 pointer-events-none"}`}
+        href={urls[0]}
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <IoLogoYoutube className="icon-size" />
-      </button>
-      <button
-        className={`card-url-btn rounded-b-full ${urls[1] ? "bg-accent hover:bg-accent/80" : "cursor-auto bg-accent/50"}`}
+        {urls[0] && <span className="tooltip-text">watch the full review</span>}
+      </a>
+      <a
+        className={`card-url-btn tooltip relative rounded-b-full ${urls[1] ? "cursor-pointer bg-accent hover:bg-accent/80" : "cursor-default bg-accent/50 pointer-events-none"}`}
+        href={urls[1]}
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <IoLogoEuro className="icon-size" />
-      </button>
+        {urls[1] && <span className="tooltip-text">link to buy</span>}
+      </a>
     </div>
   );
 }

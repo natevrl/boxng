@@ -11,36 +11,36 @@ export const statsData: IStats[] = [
     name: "Style",
     abbreviation: "STYL",
     details:
-      "It is the first impression you have of the gloves.",
+      "Style is how cool and attractive the gloves look when you wear them.",
   },
   {
     name: "Comfort",
     abbreviation: "COMF",
     details:
-      "You will wear them for a long time.",
+    "Comfort means how nice and cozy the gloves feel on your hands during long training sessions.",
   },
   {
     name: "Durability",
     abbreviation: "DURA",
     details:
-      "You don't want to buy new gloves every month.",
+    "Durability tells you how strong and long-lasting the gloves are, so you don't have to buy new ones often.",
   },
   {
     name: "Sparring",
     abbreviation: "SPAR",
     details:
-      "You need good gloves to protect your hands and your sparring partner.",
+    "Sparring is about how well the gloves protect your hands and your partner during practice fights.",
   },
   {
     name: "Bag Work",
     abbreviation: "BAG",
     details:
-      "?",
+    "Bag Work shows how good the gloves are for hitting punching bags without hurting your hands.",
   },
   {
     name: "Value for Money",
     abbreviation: "V4M",
     details:
-      "You want to buy good gloves for a good price.",
+    "Value for Money means getting great gloves at a price that is worth it.",
   },
 ];

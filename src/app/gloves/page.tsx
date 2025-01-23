@@ -1,6 +1,6 @@
 "use client";
 import CategorySlider from "@/components/sections/CategorySlider";
-import React, { Suspense, useState } from "react";
+import React, { Suspense } from "react";
 import dynamic from "next/dynamic";
 import Loader from "@/src/components/ui/Loader";
 import { useStore } from "@/src/hooks/useStore";

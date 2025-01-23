@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Suspense } from "react";
 import { socials } from "@/constants/utils";
 import VideoComponents from "@/components/ui/VideoComponent";
 

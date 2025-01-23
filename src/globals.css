@@ -267,4 +267,30 @@
     width: 1.125rem !important;
     height: 1.125rem !important;
   }
+
+  /* Tooltip text */
+  .tooltip-text {
+    @apply text-primary bg-background;
+    visibility: hidden;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    text-wrap: nowrap;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 999;
+    top: 80%;
+    left: 80%;
+
+    /* Animation */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  /* Show the tooltip on hover */
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
 }
