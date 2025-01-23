@@ -241,14 +241,12 @@ interface CardMainImageProps {
 function CardMainImage({
   url,
   alt,
-  backgroundSvg,
-  hoverUrl,
   onMouseEnter,
   onMouseLeave,
 }: CardMainImageProps) {
   return (
     <div
-      className={`card-shadow relative h-[160px] w-[150px] border-primary mobile:h-[140px] mobile:w-[130px]`}
+      className={`card-shadow relative h-[160px] w-[160px] border-primary mobile:h-[140px] mobile:w-[140px]`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
